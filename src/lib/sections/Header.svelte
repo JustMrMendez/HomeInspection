@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { tooltip } from "@skeletonlabs/skeleton";
-
+	export let scroll: number;
 
 	const serviceList = [
 		{
@@ -32,7 +31,7 @@
 >
 	<!-- simple div to add dept -->
 	<!-- Header -->
-	<div class="relative bg-surface-500/0 pb-32">
+	<div class="bg-surface-500/0 pb-32 sticky -top-1 ">
 		<div class="absolute inset-0">
 			<img
 				class="h-full w-full object-cover"
@@ -63,12 +62,15 @@
 	>
 		<h2 class="sr-only" id="contact-heading">Contact us</h2>
 		<div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
-			{#each serviceList as service}
-				<div class="card group flex flex-col  hover:bg-opacity-70 hover:backdrop-blur-sm transition-all duration-500">
+			{#each serviceList as service, i}
+				<!-- make them scroll with different speeds untill one is on top of the other one -->
+				<div
+					class="card group flex flex-col sticky top-10 hover:bg-opacity-70 hover:z-50 hover:shadow-md hover:backdrop-blur-sm transition-all duration-500"
+				>
 					<div class="relative flex-1 px-6 pt-16 pb-8 md:px-8">
 						<header class="card-header">
 							<div
-								class="absolute top-0  group-hover:-translate-y-1/3 inline-block -translate-y-1/2 transform rounded-xl bg-secondary-500 p-5 shadow-lg transition-transform duration-500"
+								class="absolute top-0 {i == 0 ? '' : i == 1 ? 'left-1/3' : 'right-1/4'} group-hover:-translate-y-1/3 inline-block -translate-y-1/2 transform rounded-xl bg-secondary-500 p-5 shadow-lg transition-transform duration-500"
 							>
 								<svg
 									class="h-6 w-6 text-success-500 group-hover:text-white"

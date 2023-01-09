@@ -92,7 +92,7 @@
 					<button
 						on:click={triggerCustomModal}
 						type="button"
-						class="relative z-20 block w-full border-2 border-primary-500 group-hover:border-tertiary-500 transition-all duration-200 overflow-hidden rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+						class="relative z-20 block w-full border-2 border-primary-500 group-hover:border-tertiary-500 transition-all duration-200 overflow-hidden rounded-lg bg-transparent focus:outline-none"
 					>
 						<span class="sr-only">Watch our video to learn more</span>
 						<span
@@ -129,7 +129,7 @@
 								/>
 							{/each}
 						</div>
-						<img class="w-full" src="https://picsum.photos/640/360?random=1" alt="" />
+						<img class="w-full aspect-video" src="https://picsum.photos/640/360?random=1" alt="" />
 					</button>
 				</div>
 			</div>

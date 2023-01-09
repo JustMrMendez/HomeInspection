@@ -1,6 +1,8 @@
 <script lang="ts">
-	import Header from '$lib/sections/Header.svelte';
+	import Cta from '$lib/sections/CTA.svelte';
+import Header from '$lib/sections/Header.svelte';
 	import Hero from '$lib/sections/Hero.svelte';
+	import Trust from '$lib/sections/Trust.svelte';
 	import { onDestroy, onMount } from 'svelte';
 
 	let main: HTMLElement | null;
@@ -20,7 +22,7 @@
 		main?.removeEventListener('scroll', scrollHandler);
 	});
 </script>
-
+<div class="fixed top-20 right-10 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full">{Math.ceil(yScroll)}</div>
 <svg
 	class="absolute top-0 right-0 z-auto text-surface-500/30 -translate-y-8 translate-x-8 transform hidden lg:block"
 	width="60vw"
@@ -43,4 +45,6 @@
 	<rect x="118" width="60vw" height="96vh" fill="url(#svg-pattern-squares)" />
 </svg>
 <Hero scroll={yScroll}/>
-<Header />
+<Header scroll={yScroll} />
+<Trust />
+<Cta />
