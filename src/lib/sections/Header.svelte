@@ -3,11 +3,11 @@
 
 	const serviceList = [
 		{
-			icon: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25',
-			title: 'Roof Certification',
+			icon: 'M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15',
+			title: '4-Point Inspection',
 			description:
-				"Choose our roof certification service for a thorough evaluation by experienced professionals using modern equipment. We provide an estimate of your roof's remaining lifespan and identify any potential issues. Our comprehensive certification meets all of your needs.",
-			link: '/services/roof-certification'
+				"Our 4-point inspection service is a comprehensive inspection of your home's electrical, plumbing, HVAC, and roof. We provide a detailed report that will help you save money on your insurance premiums.",
+			link: '/services/4-point-inspection'
 		},
 		{
 			icon: 'M21 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953l7.108-4.062A1.125 1.125 0 0121 8.688v8.123zM11.25 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953L9.567 7.71a1.125 1.125 0 011.683.977v8.123z',
@@ -17,21 +17,26 @@
 			link: '/services/wind-mitigation'
 		},
 		{
-			icon: 'M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15',
-			title: '4-Point Inspection',
+			icon: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25',
+			title: 'Roof Certification',
 			description:
-				"Our 4-point inspection service is a comprehensive inspection of your home's electrical, plumbing, HVAC, and roof. We provide a detailed report that will help you save money on your insurance premiums.",
-			link: '/services/4-point-inspection'
+				"Choose our roof certification service for a thorough evaluation by experienced professionals using modern equipment. We provide an estimate of your roof's remaining lifespan and identify any potential issues. Our comprehensive certification meets all of your needs.",
+			link: '/services/roof-certification'
 		}
 	];
+
+	let focusService: number
+	$: focusService = scroll > 1000 && scroll < 1370 ? 0 : scroll > 1370 && scroll < 1740 ? 1 : 2;
 </script>
+<div class="fixed top-20 right-10 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full">{focusService}</div>
+<!-- <div class="fixed top-20 right-20 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full">{scroll}</div> -->
 
 <div
 	class="border-t-[40px] md:border-none dark:border-surface-900 border-primary-900/70 rounded-t-lg"
 >
 	<!-- simple div to add dept -->
 	<!-- Header -->
-	<div class="bg-surface-500/0 pb-32 sticky -top-1 ">
+	<div class="bg-surface-500/0 pb-32 sticky -top-1">
 		<div class="absolute inset-0">
 			<img
 				class="h-full w-full object-cover"
@@ -57,7 +62,7 @@
 	<!-- Overlapping cards -->
 	<section
 		id="Services"
-		class="relative mx-auto -mt-32 max-w-7xl px-6 pb-32 lg:px-8 z-20"
+		class="sticky top-0 mx-auto -mt-32 max-w-7xl px-6 pb-32 lg:px-8 z-20"
 		aria-labelledby="contact-heading"
 	>
 		<h2 class="sr-only" id="contact-heading">Contact us</h2>
@@ -65,12 +70,18 @@
 			{#each serviceList as service, i}
 				<!-- make them scroll with different speeds untill one is on top of the other one -->
 				<div
-					class="card group flex flex-col sticky top-10 hover:bg-opacity-70 hover:z-50 hover:shadow-md hover:backdrop-blur-sm transition-all duration-500"
+					class="card group flex flex-col {focusService == i
+						? 'scale-105 lg:scale-100'
+						: ''} sticky top-16 lg:hover:bg-opacity-70 hover:z-50 lg:hover:shadow-md lg:hover:backdrop-blur-sm transition-all duration-500"
 				>
 					<div class="relative flex-1 px-6 pt-16 pb-8 md:px-8">
 						<header class="card-header">
 							<div
-								class="absolute top-0 {i == 0 ? '' : i == 1 ? 'left-1/3' : 'right-1/4'} group-hover:-translate-y-1/3 inline-block -translate-y-1/2 transform rounded-xl bg-secondary-500 p-5 shadow-lg transition-transform duration-500"
+								class="absolute top-0 {i == 0
+									? ''
+									: i == 1
+									? 'left-1/3 md:left-40 lg:left-12'
+									: 'right-1/4 '} group-hover:-translate-y-1/3 inline-block -translate-y-1/2 transform rounded-xl bg-secondary-500 p-5 shadow-lg transition-transform duration-500"
 							>
 								<svg
 									class="h-6 w-6 text-success-500 group-hover:text-white"
@@ -98,7 +109,9 @@
 						>
 						<a
 							href="tel:7868867436"
-							class="rounded-full hover:bg-success-500 hover:!text-secondary-500 transition-all duration-500 hover:scale-105 absolute right-3 bottom-2 fill-none dark:fill-primary-500 dark:hover:fill-secondary-500 p-2 group-hover:rotate-0 rotate-[135deg]"
+							class="rounded-full hover:bg-success-500 hover:!text-secondary-500 transition-all duration-500 hover:scale-105 absolute right-3 bottom-2 fill-none dark:fill-primary-500 dark:hover:fill-secondary-500 p-2 group-hover:rotate-0 rotate-[135deg]
+							{focusService == i
+							? 'rotate-0' : ''}"
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

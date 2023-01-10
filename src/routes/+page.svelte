@@ -22,7 +22,6 @@ import Header from '$lib/sections/Header.svelte';
 		main?.removeEventListener('scroll', scrollHandler);
 	});
 </script>
-<div class="fixed top-20 right-10 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full">{Math.ceil(yScroll)}</div>
 <svg
 	class="absolute top-0 right-0 z-auto text-surface-500/30 -translate-y-8 translate-x-8 transform hidden lg:block"
 	width="60vw"
