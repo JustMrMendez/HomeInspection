@@ -25,18 +25,21 @@
 		}
 	];
 
-	let focusService: number
+	let focusService: number;
 	$: focusService = scroll > 1000 && scroll < 1370 ? 0 : scroll > 1370 && scroll < 1740 ? 1 : 2;
 </script>
-<div class="fixed top-20 right-10 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full">{focusService}</div>
+<!-- <div
+	class="fixed top-20 right-10 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full"
+>
+	{focusService}
+</div> -->
 <!-- <div class="fixed top-20 right-20 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full">{scroll}</div> -->
-
 <div
 	class="border-t-[40px] md:border-none dark:border-surface-900 border-primary-900/70 rounded-t-lg"
 >
 	<!-- simple div to add dept -->
 	<!-- Header -->
-	<div class="bg-surface-500/0 pb-32 sticky -top-1">
+	<div class="bg-surface-500/0 pb-32 sticky -top-1 lg:relative">
 		<div class="absolute inset-0">
 			<img
 				class="h-full w-full object-cover"
@@ -70,7 +73,8 @@
 			{#each serviceList as service, i}
 				<!-- make them scroll with different speeds untill one is on top of the other one -->
 				<div
-					class="card group flex flex-col {focusService == i
+					class="card group flex flex-col hover:-translate-y-2
+					{focusService == i
 						? 'scale-105 lg:scale-100'
 						: ''} sticky top-16 lg:hover:bg-opacity-70 hover:z-50 lg:hover:shadow-md lg:hover:backdrop-blur-sm transition-all duration-500"
 				>
@@ -110,8 +114,7 @@
 						<a
 							href="tel:7868867436"
 							class="rounded-full hover:bg-success-500 hover:!text-secondary-500 transition-all duration-500 hover:scale-105 absolute right-3 bottom-2 fill-none dark:fill-primary-500 dark:hover:fill-secondary-500 p-2 group-hover:rotate-0 rotate-[135deg]
-							{focusService == i
-							? 'rotate-0' : ''}"
+							{focusService == i ? 'rotate-0 lg:rotate-[135deg]' : ''}"
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
