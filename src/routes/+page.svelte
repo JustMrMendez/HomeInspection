@@ -1,27 +1,11 @@
 <script lang="ts">
 	import Cta from '$lib/sections/CTA.svelte';
-import Header from '$lib/sections/Header.svelte';
+	import Services from '$lib/sections/Services.svelte';
 	import Hero from '$lib/sections/Hero.svelte';
 	import Trust from '$lib/sections/Trust.svelte';
-	import { onDestroy, onMount } from 'svelte';
 
-	let main: HTMLElement | null;
-	let yScroll: number;
-
-	function scrollHandler(e: any): void {
-		yScroll = e.target.scrollTop;
-		console.log(yScroll);
-	}	
-	
-	onMount(() => {
-		main = document.getElementById('page');
-		main?.addEventListener('scroll', scrollHandler);
-	});
-
-	onDestroy(() => {
-		main?.removeEventListener('scroll', scrollHandler);
-	});
 </script>
+
 <svg
 	class="absolute top-0 right-0 z-auto text-surface-500/30 -translate-y-8 translate-x-8 transform hidden lg:block"
 	width="60vw"
@@ -43,7 +27,7 @@ import Header from '$lib/sections/Header.svelte';
 	</defs>
 	<rect x="118" width="60vw" height="96vh" fill="url(#svg-pattern-squares)" />
 </svg>
-<Hero scroll={yScroll}/>
-<Header scroll={yScroll} />
+<Hero />
+<Services />
 <Trust />
 <Cta />

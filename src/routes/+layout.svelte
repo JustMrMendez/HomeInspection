@@ -6,6 +6,27 @@
 	import { AppShell, AppBar, LightSwitch } from '@skeletonlabs/skeleton';
 	import Logo from '$lib/Logo.svelte';
 	import LogoFull from '$lib/LogoFull.svelte';
+
+	import { onDestroy, onMount } from 'svelte';
+	import { Layout } from '$lib/stores/LayoutStore';
+
+	let main: HTMLElement | null;
+
+	function scrollHandler(e: any): void {
+		Layout.update((store) => {
+			store.scrollPosition = e.target.scrollTop;
+			return store;
+		});
+	}
+
+	onMount(() => {
+		main = document.getElementById('page');
+		main?.addEventListener('scroll', scrollHandler);
+	});
+
+	onDestroy(() => {
+		main?.removeEventListener('scroll', scrollHandler);
+	});
 </script>
 
 <!-- App Shell -->
@@ -18,7 +39,7 @@
 >
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar class="lg:px-20 xl:px-40">
+		<AppBar class="lg:px-20 xl:px-40 {$Layout.scrollDirection === 'down' ? '-translate-y-full opacity-30' : ''} fixed w-full transition-all duration-300">
 			<svelte:fragment slot="lead">
 				<LogoFull styles="hidden md:block h-10" />
 				<Logo styles="w-12 md:hidden" />
@@ -49,25 +70,25 @@
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
-	
+
 	<slot />
 	<!-- <svelte:fragment slot="footer"> -->
-		<footer class="bg-surface-500/5 p-4 z-20">
-			<div class="flex justify-between">
-				<div class="flex items-center">
-					<LightSwitch />
-					<span class="ml-2">Light/Dark</span>
-				</div>
-				<div class="flex items-center">
-					<span class="mr-2">Made with ❤️ by</span>
-					<a
-						class="btn btn-sm btn-ghost-surface"
-						href="https://twitter.com/justmrmendez"
-						target="_blank"
-						rel="noreferrer">Mr. Mendez</a
-					>
-				</div>
+	<footer class="bg-surface-500/5 p-4 z-20">
+		<div class="flex justify-between">
+			<div class="flex items-center">
+				<LightSwitch />
+				<span class="ml-2">Light/Dark</span>
 			</div>
-		</footer>
+			<div class="flex items-center">
+				<span class="mr-2">Made with ❤️ by</span>
+				<a
+					class="btn btn-sm btn-ghost-surface"
+					href="https://twitter.com/justmrmendez"
+					target="_blank"
+					rel="noreferrer">Mr. Mendez</a
+				>
+			</div>
+		</div>
+	</footer>
 	<!-- </svelte:fragment> -->
 </AppShell>

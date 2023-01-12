@@ -6,8 +6,7 @@
 		type ModalSettings
 	} from '@skeletonlabs/skeleton';
 	import VideoPlayer from '$lib/modals/VideoPlayer.svelte';
-
-	export let scroll: number;
+	import { Layout } from '$lib/stores/LayoutStore';
 
 	function triggerCustomModal(): void {
 		const ModalComponent: ModalComponent = {
@@ -41,7 +40,8 @@
 			<p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
 				Expert, reliable home inspections. Roof certification and insurance protection included.
 			</p>
-			<div class="mt-8 relative z-10 sm:mx-auto sm:max-w-lg sm:text-center w-full lg:mx-0 lg:text-left space-y-4"
+			<div
+				class="mt-8 relative z-10 sm:mx-auto sm:max-w-lg sm:text-center w-full lg:mx-0 lg:text-left space-y-4"
 			>
 				<p class="text-base font-medium text-gray-900">Contact us for an inspection Today!.</p>
 				<a
@@ -85,7 +85,7 @@
 				</defs>
 				<rect x="118" width="404" height="525" fill="url(#4f4f415c-a0e9-44c2-9601-6ded5a34a13e)" />
 			</svg>
-			<div style="transform: translateY({scroll / 2.7}px)">
+			<div style="transform: translateY({$Layout.scrollPosition / 2.7}px)">
 				<div
 					class="relative mx-auto w-full rounded-lg lg:max-w-md hover:scale-[1.03] group overflow-hidden md:transition-all md:duration-200"
 				>

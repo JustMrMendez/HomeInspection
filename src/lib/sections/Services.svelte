@@ -1,6 +1,5 @@
 <script lang="ts">
-	export let scroll: number;
-
+	import { Layout } from '$lib/stores/LayoutStore';
 	const serviceList = [
 		{
 			icon: 'M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15',
@@ -26,20 +25,26 @@
 	];
 
 	let focusService: number;
-	$: focusService = scroll > 1000 && scroll < 1370 ? 0 : scroll > 1370 && scroll < 1740 ? 1 : 2;
+	$: focusService =
+		$Layout.scrollPosition > 1000 && $Layout.scrollPosition < 1370
+			? 0
+			: $Layout.scrollPosition > 1370 && $Layout.scrollPosition < 1740
+			? 1
+			: 2;
 </script>
+
 <!-- <div
 	class="fixed top-20 right-10 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full"
 >
 	{focusService}
 </div> -->
-<!-- <div class="fixed top-20 right-20 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full">{scroll}</div> -->
+<!-- <div class="fixed top-20 right-20 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full">{$Layout.scrollPosition}</div> -->
 <div
 	class="border-t-[40px] md:border-none dark:border-surface-900 border-primary-900/70 rounded-t-lg"
 >
 	<!-- simple div to add dept -->
 	<!-- Header -->
-	<div class="bg-surface-500/0 pb-32 sticky -top-1 lg:relative">
+	<div id="Services" class="bg-surface-500/0 pb-32 sticky -top-1 lg:relative">
 		<div class="absolute inset-0">
 			<img
 				class="h-full w-full object-cover"
@@ -64,14 +69,13 @@
 
 	<!-- Overlapping cards -->
 	<section
-		id="Services"
 		class="sticky top-0 mx-auto -mt-32 max-w-7xl px-6 pb-32 lg:px-8 z-20"
 		aria-labelledby="contact-heading"
 	>
 		<h2 class="sr-only" id="contact-heading">Contact us</h2>
 		<div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
 			{#each serviceList as service, i}
-				<!-- make them scroll with different speeds untill one is on top of the other one -->
+				<!-- make them $Layout.scrollPosition with different speeds untill one is on top of the other one -->
 				<div
 					class="card group flex flex-col hover:-translate-y-2
 					{focusService == i

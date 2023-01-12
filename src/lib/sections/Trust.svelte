@@ -1,4 +1,5 @@
-<script lang="ts"></script>
+<script lang="ts">
+</script>
 
 <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-24 pt-24 lg:pt-0">
 	<div class="flow-root lg:mt-10">
