@@ -6,3 +6,9 @@ body {
 #page {
 	scroll-behavior: smooth;
 }
+/* disable scroll bar only on mobile */
+@media (max-width: 740px) {
+	#page::-webkit-scrollbar {
+		display: none;
+	}
+}

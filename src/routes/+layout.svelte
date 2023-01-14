@@ -39,15 +39,28 @@
 >
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar class="lg:px-20 xl:px-40 {$Layout.scrollDirection === 'down' ? '-translate-y-full opacity-30' : ''} fixed w-full transition-all duration-300">
+		<AppBar
+			class="lg:px-20 xl:px-40 {$Layout.scrollDirection === 'down'
+				? 'py-2'
+				: ''} transition-all duration-300"
+		>
 			<svelte:fragment slot="lead">
-				<LogoFull styles="hidden md:block h-10" />
-				<Logo styles="w-12 md:hidden" />
+				<LogoFull
+					styles="hidden md:block h-10 transition-all duration-300 {$Layout.scrollDirection ===
+					'down'
+						? 'scale-90'
+						: ''}"
+				/>
+				<Logo
+					styles="w-12 md:hidden transition-all duration-300 {$Layout.scrollDirection === 'down'
+						? 'scale-90'
+						: ''}"
+				/>
 			</svelte:fragment>
 			<!-- <svelte:fragment slot=""> -->
 			<!-- Nav -->
 			<nav class="md:flex w-full hidden">
-				<ul class="flex justify-center space-x-4  w-full">
+				<ul class="flex justify-center space-x-4 w-full">
 					<li><a href="#Home">Home</a></li>
 					<li><a href="#Services">Services</a></li>
 					<li><a href="#About">About us</a></li>

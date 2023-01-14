@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Layout } from '$lib/stores/LayoutStore';
+	import { onMount } from 'svelte';
 	const serviceList = [
 		{
 			icon: 'M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15',
@@ -24,26 +25,35 @@
 		}
 	];
 
-	let focusService: number;
-	$: focusService =
-		$Layout.scrollPosition > 1000 && $Layout.scrollPosition < 1370
-			? 0
-			: $Layout.scrollPosition > 1370 && $Layout.scrollPosition < 1740
-			? 1
-			: 2;
+	let focusService: number | null;
+	let observer: IntersectionObserver;
+	onMount(() => {
+		observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						focusService = parseInt(entry.target.getAttribute('data-index') as string);
+					} else {
+						if (focusService > 0) {
+							focusService = focusService - 1;
+						} else {
+							focusService = null;
+						}
+					}
+				});
+			},
+			{ threshold: 1 }
+		);
+
+		const cards = document.querySelectorAll('.card');
+		cards.forEach((card) => observer.observe(card));
+	});
+	// $: console.log(scrollView);
 </script>
 
-<!-- <div
-	class="fixed top-20 right-10 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full"
->
-	{focusService}
-</div> -->
-<!-- <div class="fixed top-20 right-20 z-50 p-2 bg-tertiary-500 aspect-square w-16 h-10 grid overflow-hidden place-items-center rounded-full">{$Layout.scrollPosition}</div> -->
 <div
 	class="border-t-[40px] md:border-none dark:border-surface-900 border-primary-900/70 rounded-t-lg"
 >
-	<!-- simple div to add dept -->
-	<!-- Header -->
 	<div id="Services" class="bg-surface-500/0 pb-32 sticky -top-1 lg:relative">
 		<div class="absolute inset-0">
 			<img
@@ -74,22 +84,23 @@
 	>
 		<h2 class="sr-only" id="contact-heading">Contact us</h2>
 		<div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
+			<!-- make them $Layout.scrollPosition with different speeds untill one is on top of the other one -->
 			{#each serviceList as service, i}
-				<!-- make them $Layout.scrollPosition with different speeds untill one is on top of the other one -->
 				<div
-					class="card group flex flex-col hover:-translate-y-2
-					{focusService == i
-						? 'scale-105 lg:scale-100'
-						: ''} sticky top-16 lg:hover:bg-opacity-70 hover:z-50 lg:hover:shadow-md lg:hover:backdrop-blur-sm transition-all duration-500"
+					data-index={i}
+					class:focused={i == focusService}
+					class="card group flex flex-col lg:hover:-translate-y-2
+					sticky top-16 lg:hover:bg-opacity-70 lg:hover:shadow-md lg:hover:backdrop-blur-sm transition-all duration-500"
 				>
 					<div class="relative flex-1 px-6 pt-16 pb-8 md:px-8">
 						<header class="card-header">
 							<div
+								class:focused={i == focusService}
 								class="absolute top-0 {i == 0
 									? ''
 									: i == 1
 									? 'left-1/3 md:left-40 lg:left-12'
-									: 'right-1/4 '} group-hover:-translate-y-1/3 inline-block -translate-y-1/2 transform rounded-xl bg-secondary-500 p-5 shadow-lg transition-transform duration-500"
+									: 'right-1/4 '} lg:group-hover:-translate-y-1/3 inline-block -translate-y-1/2 transform rounded-xl bg-secondary-500 p-5 shadow-lg transition-transform duration-500"
 							>
 								<svg
 									class="h-6 w-6 text-success-500 group-hover:text-white"
@@ -117,8 +128,8 @@
 						>
 						<a
 							href="tel:7868867436"
-							class="rounded-full hover:bg-success-500 hover:!text-secondary-500 transition-all duration-500 hover:scale-105 absolute right-3 bottom-2 fill-none dark:fill-primary-500 dark:hover:fill-secondary-500 p-2 group-hover:rotate-0 rotate-[135deg]
-							{focusService == i ? 'rotate-0 lg:rotate-[135deg]' : ''}"
+							class="rounded-full hover:bg-success-500 hover:!text-secondary-500 transition-all duration-500 hover:scale-105 absolute right-3 bottom-2 fill-none dark:fill-primary-500 dark:hover:fill-secondary-500 p-2 lg:group-hover:rotate-0 rotate-[135deg]"
+							class:rotate-0={i == focusService}
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -140,3 +151,12 @@
 		</div>
 	</section>
 </div>
+
+<style>
+	.card.focused {
+		@apply scale-105 lg:scale-100;
+	}
+	.card.focused .card-header .absolute {
+		@apply -translate-y-1/3;
+	}
+</style>
