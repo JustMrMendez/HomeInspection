@@ -5,7 +5,6 @@
 	import animationData from '$lib/animations/stars.json';
 
 	let animationContainer: HTMLElement;
-	let isContainer: boolean = true;
 
 	onMount(() => {
 		let starsAnimation = lottie.loadAnimation({
@@ -19,31 +18,23 @@
 		let observer = new IntersectionObserver(
 			(entries) => {
 				if (entries[0].isIntersecting) {
-					isContainer = true;
 					starsAnimation.playSegments([100, 0], true);
-					// after animation is done, remove it from the DOM and stop observing
-					starsAnimation.addEventListener('complete', () => {
-						isContainer = false;
-					});
 				}
 			},
 			{ threshold: 1 }
 		);
 		observer.observe(animationContainer);
 	});
-
-	$: console.log(isContainer);
+	
 </script>
 
-<div class="mx-auto max-w-7xl px-6 lg:px-8 mb-24 pt-24 lg:pt-0 relative">
-	{#if isContainer}
+<div class="mx-auto max-w-7xl px-6 lg:px-8 my-24 pt-24 lg:pt-0 relative ">
+	<!--center animation   -->
 		<div
 			bind:this={animationContainer}
-			class="lg:w-1/4 mx-auto w-3/4 mb-10 scale-[-1] border border-red-500"
-			in:fly={{ x: 0, y: 100, duration: 1000 }}
-			out:fly={{ x: 0, y: 100, duration: 1000 }}
+			class="lg:w-1/4 mx-auto w-3/4 mb-10 scale-[-1]
+		absolute inset-x-0 -top-20 z-0"
 		/>
-	{/if}
 	<div class="flow-root lg:mt-10">
 		<div class="-mt-4 gap-8 flex flex-wrap justify-between lg:-ml-4">
 			<div class="brand justify-end">

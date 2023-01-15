@@ -7,6 +7,9 @@
 	} from '@skeletonlabs/skeleton';
 	import VideoPlayer from '$lib/modals/VideoPlayer.svelte';
 	import { Layout } from '$lib/stores/LayoutStore';
+	import type { PageContent } from '$lib/xata';
+
+	export let HeroContent: PageContent;
 
 	function triggerCustomModal(): void {
 		const ModalComponent: ModalComponent = {
@@ -35,22 +38,37 @@
 	<div class="lg:grid lg:grid-cols-12 lg:gap-8">
 		<div class="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
 			<h1 class=" text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
-				Expert home inspections you can trust
+				{#if HeroContent.HeroTitle}
+					{HeroContent.HeroTitle}
+				{/if}
 			</h1>
 			<p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-				Expert, reliable home inspections. Roof certification and insurance protection included.
+				{#if HeroContent.HeroSubtitle}
+					{HeroContent.HeroSubtitle}
+				{/if}
 			</p>
 			<div
 				class="mt-8 relative z-10 sm:mx-auto sm:max-w-lg sm:text-center w-full lg:mx-0 lg:text-left space-y-4"
 			>
-				<p class="text-base font-medium text-gray-900">Contact us for an inspection Today!.</p>
-				<a
-					href="tel:7868867436"
-					class="btn mt-3 btn-filled-primary btn-base w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
-				>
-					<span class="mr-3">786 886-7436 </span>
-					<span>Call Now!</span>
-				</a>
+				<p class="text-base font-medium text-gray-900">
+					{#if HeroContent.HeroSubtitle2}
+						{HeroContent.HeroSubtitle2}
+					{/if}
+				</p>
+				{#if HeroContent.HeroCTA}
+					<a
+						href="tel:7868867436"
+						class="btn mt-3 btn-filled-primary btn-base w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
+					>
+						<!-- separate HeroCta number from action -->
+						<span class="mr-3">
+							{HeroContent.PhoneNumber}
+						</span>
+						<span>
+							{HeroContent.HeroCTA}
+						</span>
+					</a>
+				{/if}
 			</div>
 		</div>
 		<div

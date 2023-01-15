@@ -27,6 +27,9 @@
 	onDestroy(() => {
 		main?.removeEventListener('scroll', scrollHandler);
 	});
+
+	let deviceWidth: number;
+	$: $Layout.device = deviceWidth > 1024 ? 'desktop' : 'mobile';
 </script>
 
 <!-- App Shell -->

@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Mr-Mendez-s-workspace-ovgnlj.us-east-1.xata.sh/db/rnainspection",
+  "codegen": {
+    "output": "src/lib/xata.ts"
+  }
+}

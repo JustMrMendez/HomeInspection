@@ -3,7 +3,8 @@ import { writable } from 'svelte/store';
 
 export const Layout = writable({
 	scrollPosition: 0,
-	scrollDirection: 'down'
+	scrollDirection: 'down',
+	device: 'desktop',
 });
 
 // calculate if user is scrolling up or down

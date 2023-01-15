@@ -27,7 +27,11 @@
 
 	let focusService: number | null;
 	let observer: IntersectionObserver;
+	
 	onMount(() => {
+		if ($Layout.device === 'desktop') {
+			return;
+		}
 		observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
@@ -48,9 +52,7 @@
 		const cards = document.querySelectorAll('.card');
 		cards.forEach((card) => observer.observe(card));
 	});
-	// $: console.log(scrollView);
 </script>
-
 <div
 	class="border-t-[40px] md:border-none dark:border-surface-900 border-primary-900/70 rounded-t-lg"
 >

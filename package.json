@@ -41,5 +41,8 @@
 		"vite": "^4.0.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@xata.io/client": "^0.21.6"
+	}
 }
