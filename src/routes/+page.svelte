@@ -4,31 +4,26 @@
 	import Hero from '$lib/sections/Hero.svelte';
 	import Trust from '$lib/sections/Trust.svelte';
 	import type { PageServerData } from './$types';
-	import { page } from '$app/stores';
+	import { lang, Layout } from '$lib/stores/LayoutStore';
+	import type { PageContent } from '$lib/xata';
 
 	export let data: PageServerData;
-
-	let HeroContent: any;
-
-	if ($page.url.searchParams.get('lang') === 'es') {
-		HeroContent = data.content?.PageContentES;
-		// check if PageContentES contains all fields on PageContent
-		// if not, any null values will be replaced with the english version
-		Object.keys(data.content?.PageContent).forEach((key) => {
-			if (data.content?.PageContentES[key] === null) {
-				HeroContent[key] = data.content?.PageContent[key];
-			}
-			// if the key is missing, add it
-			if (data.content?.PageContentES[key] === undefined) {
-				HeroContent[key] = data.content?.PageContent[key];
-			}
-		});
-
-	} else {
-		HeroContent = data.content?.PageContent;
+	let PageContent: PageContent = {
+		HeroTitle: "Expert home inspections you can trust",
+		HeroSubtitle: "Expert, reliable home inspections. Roof certification and insurance protection included.",
+		HeroSubtitle2: "Contact us for a free quote Today!",
+		HeroCTA: "Call Now",
+		PhoneNumber: "1-800-123-4567",
+		id: "home",
 	}
+	// $: console.log($lang);
 	
-	data.content = data.content?.PageContentES;
+	// if ($lang === 'es') {
+	// 	PageContent = data.content.PageContentES;
+	// } else {
+	// 	PageContent = data.content.PageContent;
+	// }
+
 </script>
 
 <svg
@@ -52,7 +47,9 @@
 	</defs>
 	<rect x="118" width="60vw" height="96vh" fill="url(#svg-pattern-squares)" />
 </svg>
-<Hero {HeroContent}/>
+{#key $lang}
+	<Hero {PageContent} />
+{/key}
 <Services />
 <Trust />
 <Cta />

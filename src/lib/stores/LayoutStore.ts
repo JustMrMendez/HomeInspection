@@ -1,5 +1,8 @@
 // a store that holds various layout related data like scroll position, etc.
+// import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
+import type { Writable } from 'svelte/store';
+import { localStorageStore } from '@skeletonlabs/skeleton';
 
 export const Layout = writable({
 	scrollPosition: 0,
@@ -19,3 +22,6 @@ Layout.subscribe((layout) => {
 		}
 	}
 });
+
+export const lang: Writable<string> = localStorageStore('lang', 'en');
+

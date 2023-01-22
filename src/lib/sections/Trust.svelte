@@ -28,7 +28,7 @@
 	
 </script>
 
-<div class="mx-auto max-w-7xl px-6 lg:px-8 my-24 pt-24 lg:pt-0 relative ">
+<div class="mx-auto max-w-7xl px-6 lg:px-8 my-24 lg:pt-0 relative ">
 	<!--center animation   -->
 		<div
 			bind:this={animationContainer}
