@@ -1,11 +1,11 @@
-import { env } from '$env/dynamic/private';
 import { XataClient } from '$lib/xata';
 import { error } from '@sveltejs/kit';
 import { contains } from '@xata.io/client';
 import type { PageServerLoad } from './$types';
+import { XATA_API_KEY } from '$env/static/private';
 
 const xata = new XataClient({
-	apiKey: env.XATA_API_KEY
+	apiKey: XATA_API_KEY
 });
 
 export const load = (async ({ params }) => {

@@ -1,9 +1,9 @@
 import { XataClient } from '$lib/xata';
-import { env } from '$env/dynamic/private';
 import { json, type RequestHandler } from '@sveltejs/kit';
+import { XATA_API_KEY } from '$env/static/private';
 
 const xata = new XataClient({
-	apiKey: env.XATA_API_KEY
+	apiKey: XATA_API_KEY
 });
 
 

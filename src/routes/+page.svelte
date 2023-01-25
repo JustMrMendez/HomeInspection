@@ -6,6 +6,7 @@
 	import type { PageServerData } from './$types';
 	import { lang, Layout } from '$lib/stores/LayoutStore';
 	import type { PageContent } from '$lib/xata';
+	import VideoPlayer from '$lib/modals/VideoPlayer.svelte';
 
 	export let data: PageServerData;
 	let PageContent: PageContent = {
@@ -47,6 +48,7 @@
 	</defs>
 	<rect x="118" width="60vw" height="96vh" fill="url(#svg-pattern-squares)" />
 </svg>
+
 {#key $lang}
 	<Hero {PageContent} />
 {/key}
