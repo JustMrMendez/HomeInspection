@@ -91,7 +91,5 @@
 		</div>
 	</div>
 </div>
-<!-- <pre>
-    {}
-</pre> -->
-<Services serviceList ={data.services} />
+
+<Services />

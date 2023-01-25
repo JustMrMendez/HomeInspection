@@ -1,9 +1,9 @@
-import { env } from '$env/dynamic/private';
+import { XATA_API_KEY } from '$env/static/private';
 import { XataClient } from '$lib/xata';
 import type { PageServerLoad } from './$types';
 
 const xata = new XataClient({
-	apiKey: env.XATA_API_KEY
+	apiKey: XATA_API_KEY
 });
 
 export const load = (async () => {
