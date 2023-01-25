@@ -10,8 +10,6 @@
         <div class="">div test</div>
         <button class="">submit {$Layout.scrollPosition}</button>
 </div> -->
-
-
 <div class="relative dark:bg-surface-500 bg-primary-400 py-16">
     <div class="absolute inset-x-0 top-0 hidden h-1/2 lg:block" aria-hidden="true"></div> 
     <div class="mx-auto max-w-7xl bg-indigo-600 lg:bg-transparent lg:px-8">
