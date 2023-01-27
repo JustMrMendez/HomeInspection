@@ -1,10 +1,10 @@
-import { XataClient } from '$lib/xata';
+// import { XataClient } from '$lib/xata';
 import { json, type RequestHandler } from '@sveltejs/kit';
-import { XATA_API_KEY } from '$env/static/private';
+// import { XATA_API_KEY } from '$env/static/private';
 
-const xata = new XataClient({
-	apiKey: XATA_API_KEY
-});
+// const xata = new XataClient({
+// 	apiKey: XATA_API_KEY
+// });
 
 
 export const POST: RequestHandler = async ({ request }) => {
