@@ -75,6 +75,8 @@
 	};
 </script>
 
+<svelte:window bind:innerWidth={deviceWidth} />
+
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
