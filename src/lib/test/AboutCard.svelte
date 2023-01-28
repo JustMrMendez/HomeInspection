@@ -88,7 +88,8 @@
 									/></pattern
 								></defs
 							><rect
-								width="404"
+								x="100"
+								width="204"
 								height="384"
 								fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"
 							/></svg
@@ -118,14 +119,14 @@
 									/></pattern
 								></defs
 							><rect
-								width="404"
+								width="304"
 								height="384"
 								fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"
 							/></svg
 						>
 					</div>
 					<div
-						class="relative mx-auto max-w-md space-y-6 py-12 px-6 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-4 lg:max-w-none lg:p-0"
+						class="relative mx-auto max-w-md space-y-6 py-12 px-6 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-3 lg:max-w-none lg:p-0"
 					>
 						<h2 class="text-3xl font-bold tracking-tight " id="join-heading">{profile.name}</h2>
 						<p class="text-lg ">{profile.description}</p>
