@@ -9,19 +9,20 @@ const tables = [
 		columns: [
 			{ name: 'name', type: 'string', unique: true },
 			{ name: 'lang', type: 'multiple' },
-			{ name: 'PageContent', type: 'link', link: { table: 'PageContent' } },
 			{ name: 'protected', type: 'bool' },
-			{ name: 'PageContentES', type: 'link', link: { table: 'PageContentES' } }
+			{ name: 'PageContentES', type: 'link', link: { table: 'PageContentES' } },
+			{ name: 'PageContentEN', type: 'link', link: { table: 'PageContentEN' } }
 		]
 	},
 	{
-		name: 'PageContent',
+		name: 'PageContentEN',
 		columns: [
 			{ name: 'HeroTitle', type: 'text' },
 			{ name: 'HeroSubtitle', type: 'text' },
 			{ name: 'HeroSubtitle2', type: 'string' },
 			{ name: 'HeroCTA', type: 'string' },
-			{ name: 'PhoneNumber', type: 'string' }
+			{ name: 'PhoneNumber', type: 'string' },
+			{ name: 'PageName', type: 'string' }
 		]
 	},
 	{
@@ -61,8 +62,8 @@ export type InferredTypes = SchemaInference<SchemaTables>;
 export type Pages = InferredTypes['Pages'];
 export type PagesRecord = Pages & XataRecord;
 
-export type PageContent = InferredTypes['PageContent'];
-export type PageContentRecord = PageContent & XataRecord;
+export type PageContentEN = InferredTypes['PageContentEN'];
+export type PageContentENRecord = PageContentEN & XataRecord;
 
 export type PageContentES = InferredTypes['PageContentES'];
 export type PageContentESRecord = PageContentES & XataRecord;
@@ -75,7 +76,7 @@ export type FAQsRecord = FAQs & XataRecord;
 
 export type DatabaseSchema = {
 	Pages: PagesRecord;
-	PageContent: PageContentRecord;
+	PageContentEN: PageContentENRecord;
 	PageContentES: PageContentESRecord;
 	Services: ServicesRecord;
 	FAQs: FAQsRecord;
@@ -83,7 +84,7 @@ export type DatabaseSchema = {
 
 const DatabaseClient = buildClient();
 
-const defaultOptions = {
+export const defaultOptions = {
 	databaseURL: 'https://Mr-Mendez-s-workspace-ovgnlj.us-east-1.xata.sh/db/rnainspection',
 	apiKey: XATA_API_KEY
 };

@@ -3,28 +3,12 @@
 	import Services from '$lib/sections/Services.svelte';
 	import Hero from '$lib/sections/Hero.svelte';
 	import Trust from '$lib/sections/Trust.svelte';
-	import type { PageServerData } from './$types';
-	import { lang, Layout } from '$lib/stores/LayoutStore';
-	import type { PageContent } from '$lib/xata';
-	import VideoPlayer from '$lib/modals/VideoPlayer.svelte';
+	import type { PageData } from './$types';
 
-	export let data: PageServerData;
-	let PageContent: PageContent = {
-		HeroTitle: "Expert home inspections you can trust",
-		HeroSubtitle: "Expert, reliable home inspections. Roof certification and insurance protection included.",
-		HeroSubtitle2: "Contact us for a free quote Today!",
-		HeroCTA: "Call Now",
-		PhoneNumber: "1-800-123-4567",
-		id: "home",
-	}
-	// $: console.log($lang);
+	export let data: PageData;
+
+	let {  } = data
 	
-	// if ($lang === 'es') {
-	// 	PageContent = data.content.PageContentES;
-	// } else {
-	// 	PageContent = data.content.PageContent;
-	// }
-
 </script>
 
 <svg
@@ -49,9 +33,11 @@
 	<rect x="118" width="60vw" height="96vh" fill="url(#svg-pattern-squares)" />
 </svg>
 
-{#key $lang}
-	<Hero {PageContent} />
-{/key}
-<Services />
-<Trust />
-<Cta />
+{#await data}
+	<p>loading...</p>
+{:then data}
+	<Hero data={data} />
+	<Services />
+	<Trust />
+	<Cta />
+{/await}
