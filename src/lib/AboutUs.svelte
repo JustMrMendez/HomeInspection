@@ -27,13 +27,6 @@
 	];
 </script>
 
-<!-- <div class="card">
-    <img src="" alt="" class="aspect-square object-cover" />
-        <h1>{title}</h1>
-        <div class="">div test</div>
-        <button class="">submit {$Layout.scrollPosition}</button>
-</div> -->
-
 {#each profiles as profile, i}
 	<div class="relative dark:bg-surface-500 bg-primary-400 py-16">
 		<div class="absolute inset-x-0 top-0 hidden h-1/2 lg:block" aria-hidden="true" />
