@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Layout } from "$lib/stores/LayoutStore";
-    import About from '$lib/test/AboutUs.svelte';
+    import AboutUs from '$lib/AboutUs.svelte';
     import type { PageData } from './$types';
     
     //export let data: PageData;
@@ -26,4 +26,4 @@
 <p>{text}</p> -->
 
  <!-- About Us -->
-<About />
+<AboutUs />
