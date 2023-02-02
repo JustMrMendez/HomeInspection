@@ -1,6 +1,5 @@
 <script lang="ts">
     import { Layout } from "$lib/stores/LayoutStore";
-    import About from '$lib/test/AboutUs.svelte';
     import type { PageData } from './$types';
     
     //export let data: PageData;
@@ -20,10 +19,3 @@
 
 
 </script>
-
-<!-- <Card title="My second title"/> -->
-<!-- <input type="text" bind:value={text} />
-<p>{text}</p> -->
-
- <!-- About Us -->
-<About />
