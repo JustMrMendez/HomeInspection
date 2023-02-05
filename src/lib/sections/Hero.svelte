@@ -3,15 +3,14 @@
 		modalStore,
 		Modal,
 		type ModalComponent,
-		type ModalSettings,
+		type ModalSettings
 	} from '@skeletonlabs/skeleton';
 	import VideoPlayer from '$lib/modals/VideoPlayer.svelte';
 	import { Layout } from '$lib/stores/LayoutStore';
-	import type { PageContent } from '$lib/xata';
 
-	export let PageContent: PageContent;
+	export let data: any;
 
-	$: console.log(PageContent);
+	// $: console.log(PageContent);
 
 	function triggerCustomModal(): void {
 		const ModalComponent: ModalComponent = {
@@ -33,7 +32,6 @@
 
 		modalStore.trigger(d);
 	}
-
 </script>
 
 <Modal />
@@ -41,34 +39,34 @@
 	<div class="lg:grid lg:grid-cols-12 lg:gap-8">
 		<div class="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
 			<h1 class=" text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
-				{#if PageContent.HeroTitle}
-					{PageContent.HeroTitle}
+				{#if data.HeroTitle}
+					{data.HeroTitle}
 				{/if}
 			</h1>
 			<p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-				{#if PageContent.HeroSubtitle}
-					{PageContent.HeroSubtitle}
+				{#if data.HeroSubtitle}
+					{data.HeroSubtitle}
 				{/if}
 			</p>
 			<div
 				class="mt-8 relative z-10 sm:mx-auto sm:max-w-lg sm:text-center w-full lg:mx-0 lg:text-left space-y-4"
 			>
 				<p class="text-base font-medium text-gray-900">
-					{#if PageContent.HeroSubtitle2}
-						{PageContent.HeroSubtitle2}
+					{#if data.HeroSubtitle2}
+						{data.HeroSubtitle2}
 					{/if}
 				</p>
-				{#if PageContent.HeroCTA}
+				{#if data.HeroCTA}
 					<a
 						href="tel:7868867436"
 						class="btn mt-3 btn-filled-primary btn-base w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
 					>
 						<!-- separate HeroCta number from action -->
 						<span class="mr-3">
-							{PageContent.PhoneNumber}
+							{data.PhoneNumber}
 						</span>
 						<span>
-							{PageContent.HeroCTA}
+							{data.HeroCTA}
 						</span>
 					</a>
 				{/if}
