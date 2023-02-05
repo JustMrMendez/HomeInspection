@@ -11,17 +11,9 @@ export const GET: RequestHandler = async ({ request }) => {
 	// extract language and page from headers
 	const lang = request.headers.get('lang') || 'en';
 	const page = request.headers.get('from') || 'home';
-	const extraTable = request.headers.get('tables');
-
-	// extract sections from headers and trim whitespaces
-	// const getSections = request.headers.get('sections');
-	// const pageSections = getSections
-	// 	? getSections.split(',').map((section) => section.trim())
-	// 	: ['Hero', 'Services', 'FAQs', 'Contact'];
-	// const { sections, metaData } = filterAndSpreadKeys(
-	// 	ContentTableName === 'PageContentEN.*' ? content.PageContentEN : content.PageContentES,
-	// 	pageSections
-	// );
+	const extraTables = request.headers.get('tables')
+		? request.headers.get('tables').split(',')
+		: null;
 
 	// create table name for the correct language
 	const ContentTableName = `PageContent${lang.toUpperCase()}.*`;
@@ -41,6 +33,10 @@ export const GET: RequestHandler = async ({ request }) => {
 
 	// create response object
 	const response = { ...content };
+	// rename the contenttablename key to to PageContent
+	response.PageContent = response[ContentTableName];
+	// delete the old key
+	delete response[ContentTableName];
 	if (extraTableContent) {
 		response[extraTable] = extraTableContent;
 	}
