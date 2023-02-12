@@ -8,7 +8,21 @@
 	import VideoPlayer from '$lib/modals/VideoPlayer.svelte';
 	import { Layout } from '$lib/stores/LayoutStore';
 
-	export let data: any;
+	type HeroContent = {
+		title: string,
+		subtitle: string,
+		subtitle2: string,
+		PhoneNumber: string,
+		CTA: string
+	};
+
+	export let hero: HeroContent = {
+		title: 'Expert home inspections you can trust',
+		subtitle: 'Safeguarding Your Biggest Investment: Professional Home Inspections Tailored to You.',
+		subtitle2: 'Contact us for an inspection Today!.',
+		PhoneNumber: '(786) 886-7436',
+		CTA: 'Call Now!'
+	};
 
 	// $: console.log(PageContent);
 
@@ -39,37 +53,29 @@
 	<div class="lg:grid lg:grid-cols-12 lg:gap-8">
 		<div class="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
 			<h1 class=" text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
-				{#if data.HeroTitle}
-					{data.HeroTitle}
-				{/if}
+				{hero.title}
 			</h1>
 			<p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-				{#if data.HeroSubtitle}
-					{data.HeroSubtitle}
-				{/if}
+				{hero.subtitle}
 			</p>
 			<div
 				class="mt-8 relative z-10 sm:mx-auto sm:max-w-lg sm:text-center w-full lg:mx-0 lg:text-left space-y-4"
 			>
 				<p class="text-base font-medium text-gray-900">
-					{#if data.HeroSubtitle2}
-						{data.HeroSubtitle2}
-					{/if}
+					{hero.subtitle2}
 				</p>
-				{#if data.HeroCTA}
-					<a
-						href="tel:7868867436"
-						class="btn mt-3 btn-filled-primary btn-base w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
-					>
-						<!-- separate HeroCta number from action -->
-						<span class="mr-3">
-							{data.PhoneNumber}
-						</span>
-						<span>
-							{data.HeroCTA}
-						</span>
-					</a>
-				{/if}
+				<a
+					href="tel:7868867436"
+					class="btn mt-3 btn-filled-primary btn-base w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
+				>
+					<!-- separate HeroCta number from action -->
+					<span class="mr-3">
+						{hero.PhoneNumber}
+					</span>
+					<span>
+						{hero.CTA}
+					</span>
+				</a>
 			</div>
 		</div>
 		<div

@@ -38,7 +38,7 @@
 					if (entry.isIntersecting) {
 						focusService = parseInt(entry.target.getAttribute('data-index') as string);
 					} else {
-						if (focusService > 0) {
+						if (focusService !== null && focusService > 0) {
 							focusService = focusService - 1;
 						} else {
 							focusService = null;
@@ -93,7 +93,7 @@
 					data-index={i}
 					class:focused={i == focusService}
 					class="card group flex flex-col lg:hover:-translate-y-2
-					sticky top-16 lg:hover:bg-opacity-70 lg:hover:shadow-md lg:hover:backdrop-blur-sm transition-all duration-500"
+					sticky top-16 lg:hover:bg-opacity-70 lg:hover:shadow-md max-w-2xl mx-auto lg:hover:backdrop-blur-sm transition-all duration-500"
 				>
 					<div class="relative flex-1 px-6 pt-16 pb-8 md:px-8">
 						<header class="card-header">
