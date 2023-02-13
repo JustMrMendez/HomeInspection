@@ -191,7 +191,7 @@
 				<!-- call now primary button -->
 				<a
 					class="hidden md:block btn btn-sm btn-filled-primary"
-					href="tel:+1-800-555-5555"
+					href="tel:3053302949"
 					rel="noreferrer"
 				>
 					Contact us

@@ -7,7 +7,7 @@ const xata = new XataClient({
 });
 
 export const load = (async () => {
-	const services = await xata.db.Services.getAll().catch((err) => {
+	const services = await xata.db.ServicesEN.getAll().catch((err) => {
 		console.error(err);
 		return { error: err };
 	});

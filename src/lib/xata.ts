@@ -22,7 +22,7 @@ const tables = [
 			{ name: 'HeroSubtitle2', type: 'string' },
 			{ name: 'HeroCTA', type: 'string' },
 			{ name: 'PhoneNumber', type: 'string' },
-			{ name: 'PageName', type: 'string' }
+			{ name: 'Services', type: 'link', link: { table: 'ServicesEN' } }
 		]
 	},
 	{
@@ -36,7 +36,7 @@ const tables = [
 		]
 	},
 	{
-		name: 'Services',
+		name: 'ServicesEN',
 		columns: [
 			{ name: 'title', type: 'string' },
 			{ name: 'link', type: 'string' },
@@ -48,6 +48,25 @@ const tables = [
 	},
 	{
 		name: 'FAQs',
+		columns: [
+			{ name: 'Question', type: 'string' },
+			{ name: 'Answer', type: 'text' },
+			{ name: 'Link', type: 'string' }
+		]
+	},
+	{
+		name: 'ServicesES',
+		columns: [
+			{ name: 'description', type: 'string' },
+			{ name: 'link', type: 'string' },
+			{ name: 'title', type: 'string' },
+			{ name: 'title2', type: 'string' },
+			{ name: 'longDescription', type: 'text' },
+			{ name: 'icon', type: 'text' }
+		]
+	},
+	{
+		name: 'FAQsES',
 		columns: [
 			{ name: 'Question', type: 'string' },
 			{ name: 'Answer', type: 'text' },
@@ -68,18 +87,26 @@ export type PageContentENRecord = PageContentEN & XataRecord;
 export type PageContentES = InferredTypes['PageContentES'];
 export type PageContentESRecord = PageContentES & XataRecord;
 
-export type Services = InferredTypes['Services'];
-export type ServicesRecord = Services & XataRecord;
+export type ServicesEN = InferredTypes['ServicesEN'];
+export type ServicesENRecord = ServicesEN & XataRecord;
 
 export type FAQs = InferredTypes['FAQs'];
 export type FAQsRecord = FAQs & XataRecord;
+
+export type ServicesES = InferredTypes['ServicesES'];
+export type ServicesESRecord = ServicesES & XataRecord;
+
+export type FAQsES = InferredTypes['FAQsES'];
+export type FAQsESRecord = FAQsES & XataRecord;
 
 export type DatabaseSchema = {
 	Pages: PagesRecord;
 	PageContentEN: PageContentENRecord;
 	PageContentES: PageContentESRecord;
-	Services: ServicesRecord;
+	ServicesEN: ServicesENRecord;
 	FAQs: FAQsRecord;
+	ServicesES: ServicesESRecord;
+	FAQsES: FAQsESRecord;
 };
 
 const DatabaseClient = buildClient();

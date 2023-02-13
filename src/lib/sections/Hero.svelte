@@ -20,8 +20,8 @@
 	export let hero: HeroContent = {
 		title: 'Expert home inspections you can trust',
 		subtitle: 'Safeguarding Your Biggest Investment: Professional Home Inspections Tailored to You.',
-		subtitle2: 'Contact us for an inspection Today!.',
-		PhoneNumber: '(786) 886-7436',
+		subtitle2: 'Contact us for an inspection Today!',
+		PhoneNumber: '(305) 330-2949',
 		CTA: 'Call Now!'
 	};
 
@@ -31,7 +31,7 @@
 		const ModalComponent: ModalComponent = {
 			ref: VideoPlayer,
 			props: {
-				src: 'https://www.youtube.com/embed/6ZfuNTqbHE8',
+				src: 'https://www.youtube.com/embed/cgIL4Rp3Hks?controls=0',
 				title: 'YouTube video player',
 				allow:
 					'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
@@ -68,7 +68,7 @@
 					{hero.subtitle2}
 				</p>
 				<a
-					href="tel:7868867436"
+					href="tel:3053302949"
 					class="btn mt-3 btn-filled-primary btn-base w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
 				>
 					<!-- separate HeroCta number from action -->
