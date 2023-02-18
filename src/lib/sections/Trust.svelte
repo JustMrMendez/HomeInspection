@@ -26,12 +26,12 @@
 	});
 </script>
 
-<div class="mx-auto max-w-7xl px-6 lg:px-8 my-24 lg:pt-0 relative md:mt-40">
+<div class="mx-auto max-w-7xl px-6 lg:px-8 mb-24 mt-36 lg:pt-0 relative md:mt-40">
 	<!--center animation   -->
 	<div
 		bind:this={animationContainer}
 		class="lg:w-1/4 mx-auto w-3/4 max-w-md mb-10 scale-[-1]
-		absolute inset-x-0 -top-32 z-0"
+		absolute inset-x-0 -top-28 z-0"
 	/>
 	<div class="flow-root lg:mt-10">
 		<div class="-mt-4 gap-8 flex flex-wrap justify-around lg:-ml-4">
@@ -93,7 +93,7 @@
 			</div> -->
 		</div>
 	</div>
-	<h2 class="mt-8 text-surface-500 text-center">Certified and trusted by Florida's bests.</h2>
+	<h2 class="mt-8 text-surface-500 text-center">Only the best equipment, for the best job</h2>
 </div>
 
 <style>
