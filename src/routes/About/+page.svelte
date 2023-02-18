@@ -25,4 +25,7 @@
 	<rect x="118" width="60vw" height="96vh" fill="url(#svg-pattern-squares)" />
 </svg>
 <Herotest />
-<AboutUs />
+
+<div class="relative bg-primary-400 pt-10 z-10">
+	<AboutUs />
+</div>

@@ -34,22 +34,19 @@
 		<div class="mx-auto max-w-7xl bg-transparent lg:px-8">
 			<div class="flex flex-col lg:grid lg:grid-cols-12">
 				<div
-					class="relative z-10 lg:col-span-4 {flip && i == 1
-						? 'lg:col-start-10'
-						: 'lg:col-start-1'} lg:row-start-1 lg:bg-transparent lg:py-16 {flip && i == 1
-						? 'lg:ml-16'
-						: ''}"
+					class="relative z-10 flex-1 lg:col-span-4 {flip && i == 1 ? 'lg:col-start-10' : 'lg:col-start-1'} lg:row-start-1 lg:bg-transparent lg:py-16 
+					                                   		  {flip && i == 1 ? '' : ''}"
 				>
 					<div class="absolute inset-x-0 h-1/2 lg:hidden" aria-hidden="true" />
-					<div class="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0 md:flex md:justify-center">
-						<div class="relative h-56 md:aspect-square flex justify-center">
+					<div class="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0 grid place-items-center">
+						<div class="relative h-56 md:aspect-square">
 							<img
 								class="absolute bottom-0 z-10 h-72 overflow-hidden rounded-b-full object-cover drop-shadow-2xl"
 								src={profile.image}
 								alt=""
 							/>
 							<div
-								class="absolute aspect-square md:aspect-square mx-auto lg:inset-0 z-0 h-full lg:h-auto lg:w-full rounded-full dark:bg-primary-500 bg-surface-800 shadow-2xl"
+								class="absolute aspect-square mx-auto lg:inset-0 z-0 h-full lg:h-56 lg:w-full rounded-full dark:bg-primary-500 bg-surface-800 shadow-2xl"
 							/>
 						</div>
 					</div>
