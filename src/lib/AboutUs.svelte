@@ -41,7 +41,9 @@
 						: ''}"
 				>
 					<div class="absolute inset-x-0 h-1/2 lg:hidden" aria-hidden="true" />
-					<div class="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0 md:flex md:justify-center">
+					<div
+						class="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0 md:flex md:justify-center"
+					>
 						<div class="relative h-56 md:aspect-square flex justify-center">
 							<img
 								class="absolute bottom-0 z-10 h-72 overflow-hidden rounded-b-full object-cover drop-shadow-2xl"
@@ -130,7 +132,8 @@
 					>
 						<h2 class="text-3xl font-bold tracking-tight line-clamp-3 underline" id="join-heading">
 							{profile.name}
-						</h2><span class="no-underline italic">{profile.title}</span>
+						</h2>
+						<span class="no-underline italic">{profile.title}</span>
 						<p class="text-lg ">{profile.description}</p>
 					</div>
 				</div>
