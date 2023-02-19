@@ -25,8 +25,9 @@
 		}
 	];
 
-	export let focusService: number | null;
+	let focusService: number | null;
 	let observer: IntersectionObserver;
+	$: console.log(focusService);
 
 	onMount(() => {
 		if ($Layout.device === 'desktop') {
@@ -60,7 +61,7 @@
 		<div
 			data-index={i}
 			class:focused={i == focusService}
-			class="card group sticky top-16 mx-auto
+			class="group card sticky top-16 mx-auto
 					flex max-w-2xl flex-col transition-all duration-500 lg:hover:-translate-y-2 lg:hover:bg-opacity-70 lg:hover:shadow-md lg:hover:backdrop-blur-sm"
 		>
 			<div class="relative flex-1 px-6 pt-16 pb-8 md:px-8">
@@ -97,7 +98,10 @@
 				>
 				<a
 					href="tel:7868867436"
-					class="absolute right-3 bottom-2 rotate-[135deg] rounded-full fill-none p-2 transition-all duration-500 hover:scale-105 hover:bg-success-500 hover:!text-secondary-500 dark:fill-primary-500 dark:hover:fill-secondary-500 lg:group-hover:rotate-0"
+					class="absolute right-3 bottom-2 lg:rotate-[135deg] rounded-full fill-none p-2 transition-all duration-500 hover:scale-105 hover:bg-success-500 hover:!text-secondary-500 dark:fill-primary-500 dark:hover:fill-secondary-500 lg:group-hover:rotate-0
+					{focusService == i
+						? 'bg-success-500 text-secondary-500 rotate-0'
+						: 'rotate-[135deg]'}"
 					class:rotate-0={i == focusService}
 				>
 					<svg

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ServiceCards from './ServiceCards.svelte';
+	import ServiceCards from '../ServiceCards.svelte';
 
 	import { Layout } from '$lib/stores/LayoutStore';
 	import { onMount } from 'svelte';

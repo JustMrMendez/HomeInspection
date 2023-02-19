@@ -2,11 +2,11 @@
 	><header>
 		<img
 			src="https://source.unsplash.com/random/1280x540?pipe"
-			class="bg-black/50 w-full aspect-[21/9]"
+			class="aspect-[21/9] w-full bg-black/50"
 			alt="Post"
 		/>
 	</header>
-	<div class="p-4 space-y-4">
+	<div class="space-y-4 p-4">
 		<h6 class="text-primary-500">Announcements</h6>
 		<h3>Skeleton is Awesome!</h3>
 		<article>
@@ -17,18 +17,18 @@
 		</article>
 	</div>
 	<hr />
-	<footer class="p-4 flex justify-start items-center space-x-4">
+	<footer class="flex items-center justify-start space-x-4 p-4">
 		<figure
-			class="avatar flex aspect-square text-surface-50 font-semibold justify-center items-center overflow-hidden isolate bg-surface-400-500-token w-12  rounded-full   "
+			class="avatar bg-surface-400-500-token isolate flex aspect-square w-12 items-center justify-center overflow-hidden rounded-full font-semibold  text-surface-50   "
 			data-testid="avatar"
 		>
 			<img
-				class="avatar-image w-full h-full object-cover"
+				class="avatar-image h-full w-full object-cover"
 				src="https://i.pravatar.cc/160?img=5"
 				alt=""
 			/>
 		</figure>
-		<div class="flex-auto flex justify-between items-center">
+		<div class="flex flex-auto items-center justify-between">
 			<h6 class="font-bold">By Alex</h6>
 			<small>On 1/21/2023</small>
 		</div>

@@ -9,7 +9,7 @@
 <!-- @component This example creates an embedded video modal. -->
 
 <div class="modal-example-form {cBase}">
-	<button class="absolute -top-4 -right-4 z-1 btn-icon btn-filled" on:click={parent.onClose}
+	<button class="absolute -top-4 -right-4 z-10 btn-icon variant-filled-secondary" on:click={parent.onClose}
 		>✕</button
 	>
 	<!-- <video class="w-full rounded" controls>

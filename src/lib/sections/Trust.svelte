@@ -93,7 +93,7 @@
 			</div> -->
 		</div>
 	</div>
-	<h2 class="mt-8 text-surface-500 text-center">Only the best equipment, for the best job</h2>
+	<h2 class="mt-8 text-surface-600-300-token text-center">Only the best equipment, for the best job</h2>
 </div>
 
 <style>

@@ -12,9 +12,8 @@
 	};
 </script>
 
-<div class="card card-hover p-4">
-	<
-	<div>
+<div class="card card-hover variant-glass-surface h-full min-h-full space-y-4 p-4 text-left">
+	<div class="card-header pl-4">
 		<h3>
 			{testimonial.name}
 		</h3>
@@ -26,7 +25,7 @@
 			</span>
 		</small>
 	</div>
-	<blockquote class="!border-l-secondary-400">
-		{testimonial.text}
+	<blockquote class="!border-l-secondary-400 !text-success-50 ">
+		<p>{testimonial.text}</p>
 	</blockquote>
 </div>
