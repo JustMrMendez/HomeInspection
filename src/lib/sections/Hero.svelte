@@ -20,8 +20,8 @@
 	export let hero: HeroContent = {
 		title: 'Expert home inspections you can trust',
 		subtitle: 'Safeguarding Your Biggest Investment: Professional Home Inspections Tailored to You.',
-		subtitle2: 'Contact us for an inspection Today!.',
-		PhoneNumber: '(786) 886-7436',
+		subtitle2: 'Contact us for an inspection Today!',
+		PhoneNumber: '(305) 330-2949',
 		CTA: 'Call Now!'
 	};
 
@@ -31,14 +31,11 @@
 		const ModalComponent: ModalComponent = {
 			ref: VideoPlayer,
 			props: {
-				src: 'https://www.youtube.com/embed/6ZfuNTqbHE8',
-				title: 'YouTube video player',
-				allow:
-					'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+				src: 'https://www.youtube.com/embed/cgIL4Rp3Hks?controls=0',
+				title: 'R & A Home Inspection Intro Video',
 				allowfullscreen: true,
 				loading: 'lazy'
 			},
-			slot: 'test'
 		};
 		const d: ModalSettings = {
 			type: 'component',
@@ -56,20 +53,20 @@
 			<h1 class=" text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
 				{hero.title}
 			</h1>
-			<p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+			<p class="mt-5 opacity-80">
 				{hero.subtitle}
 
 			</p>
 			<div
 				class="mt-8 relative z-10 sm:mx-auto sm:max-w-lg sm:text-center w-full lg:mx-0 lg:text-left space-y-4"
 			>
-				<p class="text-base font-medium text-gray-900">
+				<p class="">
 
 					{hero.subtitle2}
 				</p>
 				<a
-					href="tel:7868867436"
-					class="btn mt-3 btn-filled-primary btn-base w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
+					href="tel:3053302949"
+					class="btn mt-3 variant-filled-primary btn-base w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
 				>
 					<!-- separate HeroCta number from action -->
 					<span class="mr-3">
@@ -121,7 +118,7 @@
 					<button
 						on:click={triggerCustomModal}
 						type="button"
-						class="relative z-20 block w-full border-2 border-primary-500 group-hover:border-tertiary-500 transition-all duration-200 overflow-hidden rounded-lg bg-transparent focus:outline-none"
+						class="relative z-20 block w-full border-2 border-primary-500 group-hover:border-tertiary-500 transition-all duration-200 overflow-hidden rounded-lg dark:bg-surface-500/25 hover:bg-transparent dark:hover:bg-transparent bg-primary-500/25 focus:outline-none"
 					>
 						<span class="sr-only">Watch our video to learn more</span>
 						<span
@@ -134,7 +131,7 @@
 								viewBox="0 0 84 84"
 							>
 								<circle
-									class="text-secondary-500/50 group-hover:scale-[0.8] group-hover:translate-x-3 group-hover:translate-y-3 transition-all duration-500 group-hover:text-success-500/50"
+									class="text-secondary-500/50 backdrop-blur-md group-hover:scale-[0.8] group-hover:translate-x-3 group-hover:translate-y-3 transition-all duration-500 group-hover:text-success-500/50"
 									opacity="0.9"
 									cx="42"
 									cy="42"
@@ -148,17 +145,7 @@
 								/>
 							</svg>
 						</span>
-						<div
-							class="w-full h-full z-10 absolute bg-surface-500/50 transform grid grid-cols-6 grid-rows-6 gap-2 overflow-hidden place-items-center"
-						>
-							<!--  build a grid of 36 shapes using {#each} that have random order, use diferent shapes -->
-							{#each Array(36).fill(0) as _, i}
-								<div
-									class="w-4 h-4 bg-surface-300/5 rounded-full group-hover:animate-pulse transition-all duration-1000"
-								/>
-							{/each}
-						</div>
-						<img class="w-full aspect-video" src="https://picsum.photos/640/360?random=1" alt="" />
+						<img class="w-full aspect-video mix-blend-multiply" src="https://picsum.photos/640/360?random=1" alt="" />
 					</button>
 				</div>
 			</div>

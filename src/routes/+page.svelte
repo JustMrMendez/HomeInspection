@@ -1,18 +1,17 @@
 <script lang="ts">
+	import Testimonials from '$lib/sections/Testimonials.svelte';
 	import Cta from '$lib/sections/CTA.svelte';
 	import Services from '$lib/sections/Services.svelte';
 	import Hero from '$lib/sections/Hero.svelte';
 	import Trust from '$lib/sections/Trust.svelte';
 	import type { PageData } from './$types';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
-
-	let {  } = data
-	
 </script>
 
 <svg
-	class="absolute top-0 right-0 z-auto text-surface-500/30 -translate-y-8 translate-x-8 transform hidden lg:block"
+	class="absolute top-0 right-0 z-auto hidden -translate-y-8 translate-x-8 transform text-surface-500/30 lg:block"
 	width="60vw"
 	height="96vh"
 	fill="none"
@@ -33,11 +32,10 @@
 	<rect x="118" width="60vw" height="96vh" fill="url(#svg-pattern-squares)" />
 </svg>
 
-{#await data}
-	<p>loading...</p>
-{:then data}
-	<Hero data={data} />
-	<Services />
-	<Trust />
-	<Cta />
-{/await}
+<Hero />
+<Services />
+<Trust />
+<!-- <Cta /> -->
+<div class="w-full py-1 bg-secondary-600 text-success-50">
+	<Testimonials />
+</div>

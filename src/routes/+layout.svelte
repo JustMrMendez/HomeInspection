@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Footer from './Footer.svelte';
+  import Footer from '../lib/sections/Footer.svelte';
 
 	// import '@skeletonlabs/skeleton/themes/theme-vintage.css';
 	import '../theme.postcss';
@@ -190,14 +190,14 @@
 
 				<!-- call now primary button -->
 				<a
-					class="hidden md:block btn btn-sm btn-filled-primary"
-					href="tel:+1-800-555-5555"
+					class="hidden md:block btn btn-sm variant-filled-primary"
+					href="tel:3053302949"
 					rel="noreferrer"
 				>
 					Contact us
 				</a>
 				<a
-					class="btn btn-sm btn-filled-primary md:hidden"
+					class="btn btn-sm variant-filled-primary md:hidden"
 					href="tel:+1-800-555-5555"
 					rel="noreferrer"
 				>

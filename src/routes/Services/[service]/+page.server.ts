@@ -11,7 +11,7 @@ const xata = new XataClient({
 export const load = (async ({ params }) => {
 	console.log(params.service);
 
-	const service = await xata.db.Services.filter('link', contains(params.service))
+	const service = await xata.db.ServicesES.filter('link', contains(params.service))
 		.getFirst()
 		.catch((err) => {
 			console.error();

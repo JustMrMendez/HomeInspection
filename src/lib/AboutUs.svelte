@@ -1,56 +1,64 @@
 <script lang="ts">
 	import { Layout } from '$lib/stores/LayoutStore';
-	
 
 	//export let title: string="This is a test title";
 
-	export let flip: boolean=true;
+	export let flip: boolean = true;
 	type profile = {
 		name: string;
+		title?: string;
 		description: string;
 		image: string;
 	};
 
 	export let profiles: profile[] = [
 		{
-			name: 'testName',
+			name: 'Cristofer Roque',
+			title: 'Co-Founder',
 			description:
-				'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non.	Cras aliquet purus dui laoreet diam sed lacus, fames.',
-			image: 'tmp_headshot.png'
+				'As co-founder of R&A Home Inspection, my goal is to ensure that we provide the most acurate and professional reports to our clients, using the latest equipment in the market we ensure the top quality on our assessments. We are here to help you buy, sell or check the condition of your home.',
+			image: 'cris.png'
 		},
 		{
-			name: 'testName',
+			name: 'Carlos Azcuy',
+			title: 'Co-Founder',
 			description:
 				'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non.	Cras aliquet purus dui laoreet diam sed lacus, fames.',
-			image: 'tmp_headshot.png'
+			image: 'carlos.png'
 		}
 	];
 </script>
 
 {#each profiles as profile, i}
-	<div class="relative dark:bg-surface-500 bg-primary-400 py-16">
+	<div class="relative bg-primary-400 py-16 dark:bg-surface-500">
 		<div class="absolute inset-x-0 top-0 hidden h-1/2 lg:block" aria-hidden="true" />
-		<div class="mx-auto max-w-7xl bg-indigo-600 lg:bg-transparent lg:px-8">
+		<div class="mx-auto max-w-7xl bg-transparent lg:px-8">
 			<div class="lg:grid lg:grid-cols-12">
 				<div
-					class="relative z-10 lg:col-span-4 {flip && i==1 ? "lg:col-start-10" : "lg:col-start-1"} lg:row-start-1 lg:bg-transparent lg:py-16 {flip && i==1 ? "ml-16" : ""}"
+					class="relative z-10 lg:col-span-4 {flip && i == 1
+						? 'lg:col-start-10'
+						: 'lg:col-start-1'} lg:row-start-1 lg:bg-transparent lg:py-16 {flip && i == 1
+						? 'ml-16'
+						: ''}"
 				>
 					<div class="absolute inset-x-0 h-1/2 lg:hidden" aria-hidden="true" />
 					<div class="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0">
 						<div class="relative h-60 md:aspect-square">
 							<img
-								class="absolute h-72 w-full z-10 bottom-0 object-cover rounded-b-full drop-shadow-2xl overflow-hidden"
+								class="absolute bottom-0 z-10 w-full overflow-hidden rounded-b-full object-cover drop-shadow-2xl"
 								src={profile.image}
 								alt=""
 							/>
 							<div
-								class="z-0 rounded-full h-60 w-full bg-primary-500 shadow-2xl absolute inset-0"
+								class="absolute inset-0 z-0 h-60 w-full rounded-full dark:bg-primary-500 bg-surface-800 shadow-2xl"
 							/>
 						</div>
 					</div>
 				</div>
 				<div
-					class="relative bg-secondary-600 lg:col-span-10 {flip && i==1 ? "lg:col-start-1" : "lg:col-start-3"} lg:row-start-1 lg:grid lg:grid-cols-10 lg:items-center lg:rounded-3xl"
+					class="relative bg-secondary-600 lg:col-span-10 {flip && i == 1
+						? 'lg:col-start-1'
+						: 'lg:col-start-3'} lg:row-start-1 lg:grid lg:grid-cols-10 lg:items-center lg:rounded-3xl"
 				>
 					<div
 						class="absolute inset-0 hidden overflow-hidden rounded-3xl lg:block"
@@ -121,7 +129,9 @@
 					<div
 						class="relative mx-auto max-w-md space-y-6 py-12 px-6 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-3 lg:max-w-none lg:p-0"
 					>
-						<h2 class="text-3xl font-bold tracking-tight " id="join-heading">{profile.name}</h2>
+						<h2 class="text-3xl font-bold tracking-tight line-clamp-3 underline" id="join-heading">
+							{profile.name}
+						</h2><span class="no-underline italic">{profile.title}</span>
 						<p class="text-lg ">{profile.description}</p>
 					</div>
 				</div>

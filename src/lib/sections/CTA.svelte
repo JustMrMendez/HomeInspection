@@ -1,15 +1,15 @@
-<div class="relative dark:bg-surface-500 bg-primary-400 py-16">
+<div class="relative dark:bg-surface-500 bg-primary-400 lg:py-16">
 	<div class="absolute inset-x-0 top-0 hidden h-1/2 lg:block" aria-hidden="true" />
-	<div class="mx-auto max-w-7xl bg-indigo-600 lg:bg-transparent lg:px-8">
+	<div class="mx-auto max-w-7xl lg:bg-transparent lg:px-8">
 		<div class="lg:grid lg:grid-cols-12">
 			<div
 				class="relative z-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:py-16"
 			>
 				<div class="absolute inset-x-0 h-1/2 lg:hidden" aria-hidden="true" />
-				<div class="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0">
+				<div class="md:mx-auto md:max-w-md md:px-6 lg:max-w-none lg:p-0">
 					<div class="relative md:aspect-video w-full h-60 md:h-full lg:aspect-square">
 						<img
-							class="rounded-3xl object-cover object-center shadow-2xl w-full h-full absolute inset-0"
+							class="md:rounded-3xl object-cover object-center shadow-2xl w-full h-full absolute inset-0"
 							src="https://picsum.photos/640/640?random=1"
 							alt=""
 						/>
