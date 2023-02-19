@@ -36,6 +36,6 @@
 <Services />
 <Trust />
 <!-- <Cta /> -->
-<div class="w-full py-1 bg-secondary-active-token">
+<div class="w-full py-1 bg-secondary-600 text-success-50">
 	<Testimonials />
 </div>

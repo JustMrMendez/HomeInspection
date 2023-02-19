@@ -26,19 +26,22 @@
 
 	// use observer to detect when a testimonial is in the center of the screen
 	// and update the active button
-	let active = 1;
+	let active = 0;
 	onMount(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						active = parseInt(entry.target.id);
+						if (entry.target.id !== null) {
+							active = parseInt(entry.target.id);
+						}
 					}
 				});
 			},
 			{ threshold: 0.5 }
 		);
-		const elements = document.querySelectorAll('button');
+		// select all buttons from the testimonials list
+		const elements = document.querySelectorAll('ul button');
 		elements.forEach((el) => {
 			observer.observe(el);
 		});
@@ -50,39 +53,39 @@
 	}
 </script>
 
-<section id="Home" class="mx-auto mt-10 mb-20 max-w-screen-xl scroll-m-36 sm:mt-24 lg:mt-32">
-	<div class="mx-auto space-y-3 px-10 text-center md:w-3/4 ">
-		<h2 class="md:!text-5xl">What our clients say</h2>
-		<p class="pt-2 !text-sm md:w-3/4 mx-auto opacity-70 md:!text-base">
+<section class="mx-auto mt-10 mb-20 max-w-screen-xl scroll-m-36 sm:mt-24 lg:mt-32">
+	<div class="sticky top-4 space-y-3 px-6 text-center md:mx-auto md:w-3/4">
+		<h2 class="!text-3xl font-black md:!text-5xl">What our clients say</h2>
+		<p class="mx-auto pt-2 !text-sm opacity-70 md:!text-base">
 			We are proud of our reputation and the quality of our work. Here's what our clients have to
 			say about us.
 		</p>
 	</div>
 	<div class="relative w-full py-2">
 		<ul
-			class="mt-10 flex min-h-fit -translate-x-2 snap-x snap-mandatory justify-between gap-5 overflow-x-auto overflow-y-visible px-10 py-20 shadow-inner md:shadow-none lg:overflow-visible"
+			class="mt-10 flex min-h-fit -translate-x-2 snap-x snap-mandatory justify-between gap-5 overflow-x-auto overflow-y-visible px-10 py-20 shadow-inner md:flex-wrap md:shadow-none lg:flex-nowrap lg:overflow-visible "
 		>
 			{#each testimonials as testimonial, i}
-				<button
-					id={i.toString()}
-					on:click={() => {
-						active = i;
-						const element = document.getElementById(i.toString());
-						if (element) {
-							element.scrollIntoView({
-								behavior: 'smooth',
-								block: 'center'
-							});
-						}
-					}}
-					class="min-w-full flex-grow snap-center transition-all duration-500 md:w-2/5 md:min-w-min md:hover:z-10 md:cursor-default
+					<button
+						id={i.toString()}
+						on:click={() => {
+							active = i;
+							const element = document.getElementById(i.toString());
+							if (element) {
+								element.scrollIntoView({
+									behavior: 'smooth',
+									block: 'center'
+								});
+							}
+						}}
+						class="min-w-full flex-grow snap-center transition-all duration-500 md:w-2/5 md:min-w-min md:cursor-default md:hover:z-10
 					{active === i ? 'shadow-lg' : ''}"
-					style={`transform: translateX(calc(${getTranslate()}px*${
-						i + Math.random() * 1
-					})) rotate(calc(${i%2 !== 0 ? '-1' : '1'}*${i-Math.random()*15}deg));`}
-				>
-					<Testimonial {testimonial} />
-				</button>
+						style={`transform: translateX(calc(${getTranslate()}px*${
+							i + Math.random() * 1
+						})) rotate(calc(${i % 2 !== 0 ? '-1' : '1'}*${i - Math.random() * 15}deg));`}
+					>
+						<Testimonial {testimonial} />
+					</button>
 			{/each}
 		</ul>
 	</div>
@@ -96,12 +99,13 @@
 					if (element) {
 						element.scrollIntoView({
 							behavior: 'smooth',
-							block: 'center'
+							block: 'center',
+							inline: 'end'
 						});
 					}
 				}}
 				class="h-3 rounded-full transition-all duration-300 md:hover:bg-secondary-400
-			{active === i ? ' z-0 w-10 bg-secondary-400' : 'z-10 w-3 bg-surface-300'}
+			{active === i ? ' z-0 w-10 bg-secondary-800' : 'z-10 w-3 bg-secondary-200'}
 			"
 			/>
 		{/each}

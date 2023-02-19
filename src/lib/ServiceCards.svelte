@@ -3,31 +3,30 @@
 	import { onMount } from 'svelte';
 	export let serviceList = [
 		{
-			icon: 'M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15',
-			title: '4-Point Inspection',
+			icon: 'M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75',
+			title: 'Insurance Inspection',
 			description:
-				"Our 4-point inspection service is a comprehensive inspection of your home's electrical, plumbing, HVAC, and roof. We provide a detailed report that will help you save money on your insurance premiums.",
+				"Get thorough insurance inspections from our experts. We'll assess your property for hazards, safety issues, and compliance with codes, and provide same-day reports for your peace of mind. Trust us to secure the best coverage for your property.",
 			link: '/Services/4-point-inspection'
 		},
 		{
-			icon: 'M21 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953l7.108-4.062A1.125 1.125 0 0121 8.688v8.123zM11.25 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953L9.567 7.71a1.125 1.125 0 011.683.977v8.123z',
-			title: 'Wind Mitigation',
+			icon: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25',
+			title: 'Full Home Inspection',
 			description:
-				'Wind mitigation is a process that helps you save money on your insurance premiums. Our team of experts will inspect your home and provide you with a detailed report that will help you save money on your insurance premiums.',
+				'Choose our expert team for a comprehensive home inspection. We`ll evaluate compliance with building codes, identify issues, and provide a detailed same-day report. Trust us for peace of mind in making decisions about your property.',
 			link: '/services/wind-mitigation'
 		},
 		{
-			icon: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25',
-			title: 'Roof Certification',
+			icon: 'M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z',
+			title: 'Sewer Scope',
 			description:
-				"Choose our roof certification service for a thorough evaluation by experienced professionals using modern equipment. We provide an estimate of your roof's remaining lifespan and identify any potential issues. Our comprehensive certification meets all of your needs.",
+				"Let R & A inspect your sewer pipes with our state-of-the-art drain inspection camera. Our expert technicians will quickly identify any issues, providing you with detailed video footage and recommendations for repair. Trust us to keep your pipes running smoothly",
 			link: '/services/roof-certification'
 		}
 	];
 
 	let focusService: number | null;
 	let observer: IntersectionObserver;
-	$: console.log(focusService);
 
 	onMount(() => {
 		if ($Layout.device === 'desktop') {
@@ -62,7 +61,7 @@
 			data-index={i}
 			class:focused={i == focusService}
 			class="group card sticky top-16 mx-auto
-					flex max-w-2xl flex-col transition-all duration-500 lg:hover:-translate-y-2 lg:hover:bg-opacity-70 lg:hover:shadow-md lg:hover:backdrop-blur-sm"
+					flex max-w-2xl flex-col bg-surface-100 transition-all duration-500 rounded-token dark:bg-surface-800 lg:hover:-translate-y-2 lg:hover:!bg-opacity-70 lg:hover:shadow-md lg:hover:!backdrop-blur-sm"
 		>
 			<div class="relative flex-1 px-6 pt-16 pb-8 md:px-8">
 				<header class="card-header">
@@ -72,7 +71,7 @@
 							? ''
 							: i == 1
 							? 'left-1/3 md:left-40 lg:left-12'
-							: 'right-1/4 '} inline-block -translate-y-1/2 transform rounded-xl bg-secondary-500 p-5 shadow-lg transition-transform duration-500 lg:group-hover:-translate-y-1/3"
+							: 'lg:left-12'} inline-block -translate-y-1/2 transform rounded-xl bg-secondary-500 p-5 shadow-lg transition-transform duration-500 lg:group-hover:-translate-y-1/3"
 					>
 						<svg
 							class="h-6 w-6 text-success-500 group-hover:text-white"
@@ -98,10 +97,10 @@
 				>
 				<a
 					href="tel:7868867436"
-					class="absolute right-3 bottom-2 lg:rotate-[135deg] rounded-full fill-none p-2 transition-all duration-500 hover:scale-105 hover:bg-success-500 hover:!text-secondary-500 dark:fill-primary-500 dark:hover:fill-secondary-500 lg:group-hover:rotate-0
+					class="absolute right-3 bottom-2 rounded-full  p-2 transition-all duration-500 hover:scale-105 dark:hover:fill-secondary-500 md:hover:bg-success-500  md:hover:!text-secondary-500 lg:rotate-[135deg] lg:group-hover:rotate-0
 					{focusService == i
-						? 'bg-success-500 text-secondary-500 rotate-0'
-						: 'rotate-[135deg]'}"
+						? 'rotate-0 fill-secondary-500 text-secondary-500'
+						: 'rotate-[135deg] fill-none dark:fill-primary-500'}"
 					class:rotate-0={i == focusService}
 				>
 					<svg
