@@ -68,7 +68,7 @@
 		</div>
 		<p class="mt-10 text-center text-xs leading-5 text-gray-500">
 			&copy; {new Date().getFullYear()}
-			Your Company, Inc. All rights reserved.
+			R & A Home Inspection Group, Inc. All rights reserved.
 		</p>
 	</div>
 </footer>

@@ -75,7 +75,7 @@
 	<button
 		in:fly={{ x: 10, duration: 300, easing: (t) => t * t * t * t }}
 		out:fly={{ x: 10, duration: 300, easing: (t) => t * t * t * t }}
-		class="btn variant-ghost-primary fixed bottom-6 right-0 z-50 cursor-pointer rounded-l-full p-2"
+		class="btn variant-ghost-primary fixed bottom-6 right-0 z-50 cursor-pointer rounded-l-full p-2 w-14"
 		on:click={() => {
 			main?.scrollTo(0, 0);
 		}}
