@@ -10,7 +10,7 @@
 				<li><a href="/">Home</a></li>
 				<li><a href="/Services">Services</a></li>
 				<li><a href="/About">About us</a></li>
-				<li><a href="/blog">Blog</a></li>
+				<!-- <li><a href="/blog">Blog</a></li> -->
 			</ul>
 		</nav>
 		<div class="mt-10 flex justify-center space-x-10">

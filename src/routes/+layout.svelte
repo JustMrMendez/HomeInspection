@@ -98,7 +98,7 @@
 				<li><a href="/">Home</a></li>
 				<li><a href="/Services">Services</a></li>
 				<li><a href="/About">About us</a></li>
-				<li><a href="/blog">Blog</a></li>
+				<!-- <li><a href="/blog">Blog</a></li> -->
 			</ul>
 			<BlogCard />
 			<form
@@ -175,11 +175,11 @@
 			<!-- <svelte:fragment slot=""> -->
 			<!-- Nav -->
 			<nav class="lg:flex w-full hidden">
-				<ul class="flex justify-around space-x-4 w-1/2 mx-auto">
-					<li><a href="/">Home</a></li>
-					<li><a href="/Services">Services</a></li>
-					<li><a href="/About">About us</a></li>
-					<li><a href="/blog">Blog</a></li>
+				<ul class="list-nav flex justify-around space-x-4 w-1/2 mx-auto group font-bold">
+					<li><a href="/" class="group-hover:opacity-50 hover:!opacity-100 transition-all duration-300">Home</a></li>
+					<li><a href="/Services" class="group-hover:opacity-50 hover:!opacity-100 transition-all duration-300">Services</a></li>
+					<li><a href="/About" class="group-hover:opacity-50 hover:!opacity-100 transition-all duration-300">About us</a></li>
+					<!-- <li><a href="/blog">Blog</a></li> -->
 				</ul>
 			</nav>
 			<!-- </svelte:fragment> -->
