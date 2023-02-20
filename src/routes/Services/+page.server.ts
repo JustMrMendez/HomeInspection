@@ -11,8 +11,7 @@ export const load = (async () => {
 		console.error(err);
 		return { error: err };
 	});
-    console.log(services);
-    
+	console.log(services);
 
 	return { services };
 }) satisfies PageServerLoad;

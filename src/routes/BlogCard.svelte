@@ -19,7 +19,7 @@
 	<hr />
 	<footer class="flex items-center justify-start space-x-4 p-4">
 		<figure
-			class="avatar bg-surface-400-500-token isolate flex aspect-square w-12 items-center justify-center overflow-hidden rounded-full font-semibold  text-surface-50   "
+			class="avatar isolate flex aspect-square w-12 items-center justify-center overflow-hidden rounded-full font-semibold text-surface-50  bg-surface-400-500-token   "
 			data-testid="avatar"
 		>
 			<img

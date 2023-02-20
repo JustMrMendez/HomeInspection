@@ -1,4 +1,4 @@
-<div class="relative dark:bg-surface-500 bg-primary-400 lg:py-16">
+<div class="relative bg-primary-400 dark:bg-surface-500 lg:py-16">
 	<div class="absolute inset-x-0 top-0 hidden h-1/2 lg:block" aria-hidden="true" />
 	<div class="mx-auto max-w-7xl lg:bg-transparent lg:px-8">
 		<div class="lg:grid lg:grid-cols-12">
@@ -7,9 +7,9 @@
 			>
 				<div class="absolute inset-x-0 h-1/2 lg:hidden" aria-hidden="true" />
 				<div class="md:mx-auto md:max-w-md md:px-6 lg:max-w-none lg:p-0">
-					<div class="relative md:aspect-video w-full h-60 md:h-full lg:aspect-square">
+					<div class="relative h-60 w-full md:aspect-video md:h-full lg:aspect-square">
 						<img
-							class="md:rounded-3xl object-cover object-center shadow-2xl w-full h-full absolute inset-0"
+							class="absolute inset-0 h-full w-full object-cover object-center shadow-2xl md:rounded-3xl"
 							src="https://picsum.photos/640/640?random=1"
 							alt=""
 						/>
@@ -86,15 +86,13 @@
 				<div
 					class="relative mx-auto max-w-md space-y-6 py-12 px-6 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-4 lg:max-w-none lg:p-0"
 				>
-					<h2 class="text-3xl font-bold tracking-tight " id="join-heading">
-						Join our team
-					</h2>
+					<h2 class="text-3xl font-bold tracking-tight " id="join-heading">Join our team</h2>
 					<p class="text-lg ">
 						Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non.
 						Cras aliquet purus dui laoreet diam sed lacus, fames.
 					</p>
 					<a
-						class="block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium shadow-md hover sm:inline-block sm:w-auto"
+						class="hover block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium shadow-md sm:inline-block sm:w-auto"
 						href="#">Explore open positions</a
 					>
 				</div>

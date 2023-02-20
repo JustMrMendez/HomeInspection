@@ -7,12 +7,10 @@
 	hero={{
 		title: 'Learn more about us',
 		titleAccent: 'and our team',
-		subtitle:
-			'Your Trusted Home Inspection Team in Miami, Kendall, Doral, and Throughout Florida'
+		subtitle: 'Your Trusted Home Inspection Team in Miami, Kendall, Doral, and Throughout Florida'
 	}}
 />
 
-
-<div class="relative z-10 bg-primary-400 dark:bg-surface-500 pt-10">
+<div class="relative z-10 bg-primary-400 pt-10 dark:bg-surface-500">
 	<AboutUs />
 </div>

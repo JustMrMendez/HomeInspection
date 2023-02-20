@@ -137,7 +137,10 @@
 							{profile.name}
 						</h2>
 						<span class="italic no-underline">
-							{profile.title} - <a class="unstyled hover:underline" href="mailto:{profile.email}"><small>{profile.email}</small></a>
+							{profile.title} -
+							<a class="unstyled hover:underline" href="mailto:{profile.email}"
+								><small>{profile.email}</small></a
+							>
 						</span>
 						<p class="text-lg ">{profile.description}</p>
 					</div>

@@ -1,7 +1,8 @@
 <script lang="ts">
-    
 </script>
 
-<main class="p-10 border-2 border-dashed dark:border-primary-500 border-surface-500 h-full m-10 grid place-items-center">
-    <slot />    
+<main
+	class="m-10 grid h-full place-items-center border-2 border-dashed border-surface-500 p-10 dark:border-primary-500"
+>
+	<slot />
 </main>

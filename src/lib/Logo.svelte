@@ -9,7 +9,7 @@
 		stroke-miterlimit="2"
 		clip-rule="evenodd"
 		viewBox="249 328.75 1591 1432.25"
-        class="{styles}"
+		class={styles}
 		><path
 			fill="#faa81b"
 			fill-rule="nonzero"

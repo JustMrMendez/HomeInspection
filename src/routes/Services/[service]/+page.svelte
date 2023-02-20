@@ -2,8 +2,7 @@
 	import { page } from '$app/stores';
 	import type { PageServerData } from './$types';
 
-	export let data: PageServerData
-
+	export let data: PageServerData;
 </script>
 
 <div class="relative overflow-hidden">
@@ -71,12 +70,12 @@
 	<div class="relative pt-6 pb-16 sm:pb-24">
 		<div class="mx-auto mt-16 max-w-7xl px-6 sm:mt-24">
 			<div class="text-center">
-				<h1 class="text-4xl font-bold tracking-tight text-gray-surface-500/50:text-5xl md:text-6xl">
+				<h1 class="text-gray-surface-500/50:text-5xl text-4xl font-bold tracking-tight md:text-6xl">
 					<span class="block">{data.service.title}</span>
 					<span class="block text-primary-600">{data.service.title2}</span>
 				</h1>
 				<p
-					class="mx-auto mt-3 max-w-md text-base text-gray-surface-500/50:text-lg md:mt-5 md:max-w-3xl md:text-xl"
+					class="text-gray-surface-500/50:text-lg mx-auto mt-3 max-w-md text-base md:mt-5 md:max-w-3xl md:text-xl"
 				>
 					{data.service.description}
 				</p>

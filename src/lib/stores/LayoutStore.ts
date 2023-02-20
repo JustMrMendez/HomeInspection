@@ -7,7 +7,7 @@ import { localStorageStore } from '@skeletonlabs/skeleton';
 export const Layout = writable({
 	scrollPosition: 0,
 	scrollDirection: 'down',
-	device: 'desktop',
+	device: 'desktop'
 });
 
 // calculate if user is scrolling up or down
@@ -24,4 +24,3 @@ Layout.subscribe((layout) => {
 });
 
 export const lang: Writable<string> = localStorageStore('lang', 'en');
-

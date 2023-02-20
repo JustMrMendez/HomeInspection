@@ -6,7 +6,6 @@ import { json, type RequestHandler } from '@sveltejs/kit';
 // 	apiKey: XATA_API_KEY
 // });
 
-
 export const POST: RequestHandler = async ({ request }) => {
 	const formData = await request.formData();
 	const lang = formData.get('lang') as string;
@@ -15,7 +14,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	if (lang !== 'en' && lang !== 'es') {
 		// return fail(400, { lang, message: 'Requested Language is missing' });
-        return json({ lang, message: 'Requested Language is missing' }, { status: 400 })
+		return json({ lang, message: 'Requested Language is missing' }, { status: 400 });
 	}
 
 	return json({ success: true, lang });

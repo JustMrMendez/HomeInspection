@@ -1,6 +1,6 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 
-<div class="container h-full mx-auto flex justify-center items-center">
+<div class="container mx-auto flex h-full items-center justify-center">
 	<div class="space-y-10 text-center">
 		<h2 class="font-bold">Welcome to Skeleton.</h2>
 		<!-- Animated Logo -->
@@ -15,7 +15,7 @@
 		</figure>
 		<!-- / -->
 		<div class="flex justify-center space-x-2">
-			<a class="btn btn-filled" href="https://skeleton.dev/" target="_blank" rel="noreferrer"
+			<a class="btn-filled btn" href="https://skeleton.dev/" target="_blank" rel="noreferrer"
 				>Launch Documentation</a
 			>
 		</div>
@@ -29,11 +29,11 @@
 
 <style lang="postcss">
 	figure {
-		@apply flex relative flex-col;
+		@apply relative flex flex-col;
 	}
 	figure svg,
 	.img-bg {
-		@apply w-64 h-64 md:w-80 md:h-80;
+		@apply h-64 w-64 md:h-80 md:w-80;
 	}
 	.img-bg {
 		@apply bg-gradient-to-r from-primary-300 to-warning-300;

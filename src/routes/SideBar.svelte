@@ -53,7 +53,7 @@
 			</ul>
 			<a
 				href="tel:3053302949"
-				class="btn variant-ghost-surface w-11/12 text-lg font-bold mx-auto"
+				class="btn variant-ghost-surface mx-auto w-11/12 text-lg font-bold"
 				on:click={() => ($drawerStore.open = false)}
 			>
 				Contact us

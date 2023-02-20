@@ -34,11 +34,15 @@
 		<div class="mx-auto max-w-7xl bg-transparent lg:px-8">
 			<div class="flex flex-col lg:grid lg:grid-cols-12">
 				<div
-					class="relative z-10 flex-1 lg:col-span-4 {flip && i == 1 ? 'lg:col-start-10' : 'lg:col-start-1'} lg:row-start-1 lg:bg-transparent lg:py-16 
+					class="relative z-10 flex-1 lg:col-span-4 {flip && i == 1
+						? 'lg:col-start-10'
+						: 'lg:col-start-1'} lg:row-start-1 lg:bg-transparent lg:py-16 
 					                                   		  {flip && i == 1 ? '' : ''}"
 				>
 					<div class="absolute inset-x-0 h-1/2 lg:hidden" aria-hidden="true" />
-					<div class="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0 grid place-items-center">
+					<div
+						class="mx-auto grid max-w-md place-items-center px-6 sm:max-w-3xl lg:max-w-none lg:p-0"
+					>
 						<div class="relative h-56 md:aspect-square">
 							<img
 								class="absolute bottom-0 z-10 h-72 overflow-hidden rounded-b-full object-cover drop-shadow-2xl"
@@ -46,7 +50,7 @@
 								alt=""
 							/>
 							<div
-								class="absolute aspect-square mx-auto lg:inset-0 z-0 h-full lg:h-56 lg:w-full rounded-full dark:bg-primary-500 bg-surface-800 shadow-2xl"
+								class="absolute z-0 mx-auto aspect-square h-full rounded-full bg-surface-800 shadow-2xl dark:bg-primary-500 lg:inset-0 lg:h-56 lg:w-full"
 							/>
 						</div>
 					</div>
@@ -125,9 +129,10 @@
 					<div
 						class="relative mx-auto max-w-md space-y-6 py-12 px-6 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-3 lg:max-w-none lg:p-0"
 					>
-						<h2 class="text-3xl font-bold tracking-tight line-clamp-3 underline" id="join-heading">
+						<h2 class="text-3xl font-bold tracking-tight underline line-clamp-3" id="join-heading">
 							{profile.name}
-						</h2><span class="no-underline italic">{profile.title}</span>
+						</h2>
+						<span class="italic no-underline">{profile.title}</span>
 						<p class="text-lg ">{profile.description}</p>
 					</div>
 				</div>

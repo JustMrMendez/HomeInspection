@@ -15,7 +15,7 @@
 				<p class="text-base font-medium text-gray-900">HeroSubtitle2</p>
 				<a
 					href="tel:7868867436"
-					class="btn variant-filled-primary btn-base mt-3 w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
+					class="btn-base btn variant-filled-primary mt-3 w-full sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
 				>
 					<!-- separate HeroCta number from action -->
 					<span class="mr-3"> PhoneNumber </span>
