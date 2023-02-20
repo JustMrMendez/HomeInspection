@@ -11,7 +11,7 @@
 	};
 </script>
 
-<section class="relative overflow-hidden bg-surface-100-800-token">
+<section id="hero" class="relative overflow-hidden bg-surface-100-800-token">
 	<div class="absolute inset-y-0 h-full w-full" aria-hidden="true">
 		<div class="relative h-full">
 			<svg

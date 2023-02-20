@@ -2,7 +2,7 @@
 	export let styles: string = '';
 </script>
 
-<a href="/#">
+<a href="/#Home">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		xml:space="preserve"
@@ -10,7 +10,7 @@
 		stroke-linejoin="round"
 		stroke-miterlimit="2"
 		clip-rule="evenodd"
-		class="{styles}"
+		class={styles}
 		viewBox="34.7 40.88 790.84 178.99"
 		><path fill="none" d="M0 0.168h860.244v260.416H0z" /><path
 			fill="#faa81b"

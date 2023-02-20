@@ -7,14 +7,19 @@
 		<LogoFull styles="w-44 mx-auto mb-10" />
 		<nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
 			<ul class="list-nav flex">
-				<li><a href="/">Home</a></li>
-				<li><a href="/Services">Services</a></li>
-				<li><a href="/About">About us</a></li>
+				<li><a href="/#Home">Home</a></li>
+				<li><a href="/Services#hero">Services</a></li>
+				<li><a href="/About#hero">About us</a></li>
 				<!-- <li><a href="/blog">Blog</a></li> -->
 			</ul>
 		</nav>
 		<div class="mt-10 flex justify-center space-x-10">
-			<a href="#" class="text-gray-400 hover:text-gray-500">
+			<a
+				target="_blank"
+				rel="noreferrer"
+				href="https://www.facebook.com/RnAinspection"
+				class="text-gray-400 hover:text-gray-500"
+			>
 				<span class="sr-only">Facebook</span>
 				<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 					<path
@@ -25,7 +30,12 @@
 				</svg>
 			</a>
 
-			<a href="#" class="text-gray-400 hover:text-gray-500">
+			<a
+				target="_blank"
+				rel="noreferrer"
+				href="https://instagram.com/rna_inspections"
+				class="text-gray-400 hover:text-gray-500"
+			>
 				<span class="sr-only">Instagram</span>
 				<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 					<path
