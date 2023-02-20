@@ -54,7 +54,7 @@
 </script>
 
 <section class="mx-auto mt-10 mb-20 max-w-screen-xl scroll-m-36 sm:mt-24 lg:mt-32 ">
-	<div class="sticky top-4 space-y-3 px-6 text-center md:mx-auto md:w-3/4">
+	<div class=" space-y-3 px-6 text-center md:mx-auto md:w-3/4">
 		<h2 class="!text-3xl font-black md:!text-5xl">What our clients say</h2>
 		<p class="mx-auto pt-2 !text-sm opacity-70 md:!text-base">
 			We are proud of our reputation and the quality of our work. Here's what our clients have to

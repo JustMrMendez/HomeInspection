@@ -2,7 +2,7 @@
 	export let styles: string = '';
 </script>
 
-<a href="/#Home">
+<a href="/">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		xml:space="preserve"

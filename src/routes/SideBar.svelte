@@ -2,29 +2,33 @@
 	import { LightSwitch, Drawer, ProgressRadial, drawerStore } from '@skeletonlabs/skeleton';
 	import { Layout } from '$lib/stores/LayoutStore';
 	import { lang } from '$lib/stores/LayoutStore';
-	import { enhance, type SubmitFunction } from '$app/forms';
+	// import type { enhance, SubmitFunction } from '$app/forms';
 	import BlogCard from './BlogCard.svelte';
+	import { page } from '$app/stores';
 
-	function classNames(...classes: any[]) {
-		return classes.filter(Boolean).join(' ');
-	}
+	let urlPath: string;
+	$: urlPath = $page.url.pathname;
 
-	let loading: boolean = false;
-	const changeLang: SubmitFunction = ({ data }) => {
-		loading = true;
-		data.append('lang', $lang);
-		// append page title
+	// function classNames(...classes: any[]) {
+	// 	return classes.filter(Boolean).join(' ');
+	// }
 
-		return async ({ update }) => {
-			await new Promise((resolve) => setTimeout(resolve, 1000));
-			loading = false;
-			lang.update((store) => {
-				store = store === 'en' ? 'es' : 'en';
-				return store;
-			});
-			await update();
-		};
-	};
+	// let loading: boolean = false;
+	// const changeLang: SubmitFunction = ({ data }) => {
+	// 	loading = true;
+	// 	data.append('lang', $lang);
+	// 	// append page title
+
+	// 	return async ({ update }) => {
+	// 		await new Promise((resolve) => setTimeout(resolve, 1000));
+	// 		loading = false;
+	// 		lang.update((store) => {
+	// 			store = store === 'en' ? 'es' : 'en';
+	// 			return store;
+	// 		});
+	// 		await update();
+	// 	};
+	// };
 </script>
 
 {#if $Layout.device === 'mobile'}
@@ -41,14 +45,32 @@
 		</div>
 		<div class="mt-2 flex h-[90%] flex-col justify-between border-t-2 border-surface-500/50 px-2">
 			<!-- menu -->
-			<ul class="list-nav text-lg font-bold mt-4">
+			<ul class="list-nav mt-4 text-lg font-bold">
 				<li><a on:click={() => ($drawerStore.open = false)} href="/">Home</a></li>
 				<li><a on:click={() => ($drawerStore.open = false)} href="/Services">Services</a></li>
 				<li><a on:click={() => ($drawerStore.open = false)} href="/About">About us</a></li>
 				<!-- <li><a href="/blog">Blog</a></li> -->
 			</ul>
-			<BlogCard />
-			<form
+			<a
+				href="tel:3053302949"
+				class="btn variant-ghost-surface w-11/12 text-lg font-bold mx-auto"
+				on:click={() => ($drawerStore.open = false)}
+			>
+				Contact us
+			</a>
+			<!-- {#if urlPath === '/'}
+				<h3 class="border-t">Navigate</h3>
+				<ul class="list-nav mt-4 text-lg font-bold">
+					<li><a on:click={() => ($drawerStore.open = false)} href="/">Home</a></li>
+					<li><a on:click={() => ($drawerStore.open = false)} href="/">Home</a></li>
+					<li><a on:click={() => ($drawerStore.open = false)} href="/">Home</a></li>
+					<li><a on:click={() => ($drawerStore.open = false)} href="/Services">Services</a></li>
+					<li><a on:click={() => ($drawerStore.open = false)} href="/About">About us</a></li>
+					<!-- <li><a href="/blog">Blog</a></li> -->
+			<!-- </ul> -->
+			<!-- {/if} -->
+			<!-- <BlogCard /> -->
+			<!-- <form
 				method="post"
 				use:enhance={changeLang}
 				action="api/lang"
@@ -93,7 +115,7 @@
 						</svg>
 					{/if}
 				</button>
-			</form>
+			</form> -->
 		</div>
 	</Drawer>
 {/if}

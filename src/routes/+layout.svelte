@@ -1,9 +1,7 @@
 <script lang="ts">
-  import SideBar from './SideBar.svelte';
-
-  import Footer from '../lib/sections/Footer.svelte';
-
-	// import '@skeletonlabs/skeleton/themes/theme-vintage.css';
+	import SideBar from './SideBar.svelte';
+	import Footer from '../lib/sections/Footer.svelte';
+	import { fly } from 'svelte/transition';
 	import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
@@ -23,6 +21,7 @@
 	import { Layout } from '$lib/stores/LayoutStore';
 	import { page } from '$app/stores';
 	import { lang } from '$lib/stores/LayoutStore';
+	import PageTransition from '$lib/animations/PageTransition.svelte';
 
 	let main: HTMLElement | null;
 
@@ -31,7 +30,7 @@
 			store.scrollPosition = e.target.scrollTop;
 			return store;
 		});
-	};
+	}
 
 	onMount(() => {
 		main = document.getElementById('page');
@@ -50,6 +49,17 @@
 		return classes.filter(Boolean).join(' ');
 	}
 
+	let maxScroll: number;
+	$: console.log('maxScroll', $Layout.scrollPosition);
+
+	onMount(() => {
+		// get max scroll height of the page
+		maxScroll = document.body.scrollHeight - window.innerHeight;
+	});
+	// scroll to top on page change
+	$: page.subscribe(() => {
+		main?.scrollTo(0, 0);
+	});
 </script>
 
 <svelte:window bind:innerWidth={deviceWidth} />
@@ -59,6 +69,32 @@
 </svelte:head>
 <SideBar />
 <!-- App Shell -->
+
+<!-- simple arrow to scroll to the top when the user passes halve the scroll -->
+{#if $Layout.scrollPosition > 2300 && $drawerStore.open === false}
+	<button
+		in:fly={{ x: 10 , duration: 300, easing: (t) => t * t * t * t}} out:fly={{ x: 10 , duration: 300, easing: (t) => t * t * t * t}}
+		class="btn variant-ghost-primary fixed bottom-6 right-0 z-50 cursor-pointer rounded-l-full p-2"
+		on:click={() => {
+			main?.scrollTo(0, 0);
+		}}
+	>
+		<svg
+			class="text-on-surface-50/5 h-6 w-6"
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke="currentColor"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M5 10l7-7m0 0l7 7m-7-7v18"
+			/>
+		</svg>
+	</button>
+{/if}
 <AppShell slotHeader="" slotPageContent="relative bg-surface-50/5 z-10">
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
@@ -82,11 +118,28 @@
 			</svelte:fragment>
 			<!-- <svelte:fragment slot=""> -->
 			<!-- Nav -->
-			<nav class="lg:flex w-full hidden">
-				<ul class="list-nav flex justify-around space-x-4 w-1/2 mx-auto group font-bold">
-					<li><a href="/#Home" class="group-hover:opacity-50 hover:!opacity-100 transition-all duration-300">Home</a></li>
-					<li><a href="/Services#hero" class="group-hover:opacity-50 hover:!opacity-100 transition-all duration-300">Services</a></li>
-					<li><a href="/About#hero" class="group-hover:opacity-50 hover:!opacity-100 transition-all duration-300">About us</a></li>
+			<nav class="hidden w-full lg:flex">
+				<ul class="group list-nav mx-auto flex w-1/2 justify-around space-x-4 font-bold">
+					<li>
+						<a
+							href="/"
+							class="transition-all duration-300 hover:!opacity-100 group-hover:opacity-50">Home</a
+						>
+					</li>
+					<li>
+						<a
+							href="/Services"
+							class="transition-all duration-300 hover:!opacity-100 group-hover:opacity-50"
+							>Services</a
+						>
+					</li>
+					<li>
+						<a
+							href="/About"
+							class="transition-all duration-300 hover:!opacity-100 group-hover:opacity-50"
+							>About us</a
+						>
+					</li>
 					<!-- <li><a href="/blog">Blog</a></li> -->
 				</ul>
 			</nav>
@@ -98,7 +151,7 @@
 
 				<!-- call now primary button -->
 				<a
-					class="hidden md:block btn btn-sm variant-filled-primary"
+					class="btn btn-sm variant-filled-primary hidden md:block"
 					href="tel:3053302949"
 					rel="noreferrer"
 				>
@@ -111,15 +164,17 @@
 				>
 					Call Now
 				</a>
-				<div class="lg:hidden transition-transform duration-500 z-50">
+				<div class="z-50 transition-transform duration-500 lg:hidden">
 					<MenuIcon bind:open={$drawerStore.open} />
 				</div>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
+	<PageTransition url={$page.url.toString()}>
+		<slot />
+	</PageTransition>
 
-	<slot />
 	<!-- <svelte:fragment slot="footer"> -->
 	<Footer />
 	<!-- </svelte:fragment> -->

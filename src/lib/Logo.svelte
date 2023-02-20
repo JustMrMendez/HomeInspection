@@ -2,7 +2,7 @@
 	export let styles: string = '';
 </script>
 
-<a href="/#Home">
+<a href="/">
 	<svg
 		fill-rule="evenodd"
 		stroke-linejoin="round"
