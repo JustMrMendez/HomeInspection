@@ -144,7 +144,7 @@
 						</span>
 						<img
 							class="aspect-video w-full mix-blend-multiply"
-							src="https://picsum.photos/640/360?random=1"
+							src="thumbnail.jpeg"
 							alt=""
 						/>
 					</button>
