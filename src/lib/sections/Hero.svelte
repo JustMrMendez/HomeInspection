@@ -1,4 +1,6 @@
 <script lang="ts">
+	import VodieoModal from './VodieoModal.svelte';
+
 	import {
 		modalStore,
 		Modal,
@@ -46,7 +48,7 @@
 	}
 </script>
 
-<Modal />
+<Modal width="md:w-2/3" padding="!overflow-visible" />
 <section id="Home" class="mx-auto mt-10 mb-40 max-w-7xl scroll-m-36 px-6 sm:mt-24 lg:mt-32">
 	<div class="lg:grid lg:grid-cols-12 lg:gap-8">
 		<div class="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
@@ -108,48 +110,7 @@
 				</defs>
 				<rect x="118" width="404" height="525" fill="url(#4f4f415c-a0e9-44c2-9601-6ded5a34a13e)" />
 			</svg>
-			<div style="transform: translateY({$Layout.scrollPosition / 2.8}px)">
-				<div
-					class="group relative mx-auto w-full overflow-hidden rounded-lg hover:scale-[1.03] md:transition-all md:duration-200 lg:max-w-md"
-				>
-					<button
-						on:click={triggerCustomModal}
-						type="button"
-						class="relative z-20 block w-full overflow-hidden rounded-lg border-2 border-primary-500 bg-primary-500/25 transition-all duration-200 hover:bg-transparent focus:outline-none group-hover:border-tertiary-500 dark:bg-surface-500/25 dark:hover:bg-transparent"
-					>
-						<span class="sr-only">Watch our video to learn more</span>
-						<span
-							class="absolute inset-0 z-20 flex h-full w-full items-center justify-center"
-							aria-hidden="true"
-						>
-							<!-- make the svg scroll up faster using the yScroll value -->
-							<svg
-								class="h-20 w-20 transition-all duration-500 group-hover:scale-110"
-								viewBox="0 0 84 84"
-							>
-								<circle
-									class="text-secondary-500/50 backdrop-blur-md transition-all duration-500 group-hover:translate-x-3 group-hover:translate-y-3 group-hover:scale-[0.8] group-hover:text-success-500/50"
-									opacity="0.9"
-									cx="42"
-									cy="42"
-									r="42"
-									fill="currentColor"
-								/>
-								<path
-									class="text-success-500 transition-all duration-500 group-hover:scale-110 group-hover:text-secondary-500 "
-									fill="currentColor"
-									d="M55.5039 40.3359L37.1094 28.0729C35.7803 27.1869 34 28.1396 34 29.737V54.263C34 55.8604 35.7803 56.8131 37.1094 55.9271L55.5038 43.6641C56.6913 42.8725 56.6913 41.1275 55.5039 40.3359Z"
-								/>
-							</svg>
-						</span>
-						<img
-							class="aspect-video w-full mix-blend-multiply"
-							src="thumbnail.jpeg"
-							alt=""
-						/>
-					</button>
-				</div>
-			</div>
+			<VodieoModal />
 		</div>
 	</div>
 </section>

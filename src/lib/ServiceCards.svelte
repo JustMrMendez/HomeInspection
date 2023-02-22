@@ -87,14 +87,14 @@
 					</div>
 					<h3>{service.title}</h3>
 				</header>
-				<p class="mt-4">
+				<p class="mt-4 opacity-80">
 					{service.description}
 				</p>
 			</div>
 			<footer class="card-footer relative flex justify-between">
-				<a href={service.link} class="text-base font-medium text-indigo-700 hover:text-indigo-600"
+				<!-- <a href={service.link} class="text-base font-medium text-indigo-700 hover:text-indigo-600"
 					>Read More <span aria-hidden="true"> &rarr;</span></a
-				>
+				> -->
 				<a
 					href="tel:7868867436"
 					class="absolute right-3 bottom-2 rounded-full  p-2 transition-all duration-500 hover:scale-105 dark:hover:fill-secondary-500 md:hover:bg-success-500  md:hover:!text-secondary-500 lg:rotate-[135deg] lg:group-hover:rotate-0
@@ -108,7 +108,7 @@
 						viewBox="0 0 24 24"
 						stroke-width="1.5"
 						stroke="currentColor"
-						class="h-6 w-6 "
+						class="h-6 w-6"
 					>
 						<path
 							stroke-linecap="round"

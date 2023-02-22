@@ -65,7 +65,7 @@
 <svelte:window bind:innerWidth={deviceWidth} />
 
 <svelte:head>
-	<title>Home</title>
+	<title>Home Inspeactions | R & A Home Inspections</title>
 </svelte:head>
 <SideBar />
 <!-- App Shell -->
@@ -75,7 +75,7 @@
 	<button
 		in:fly={{ x: 10, duration: 300, easing: (t) => t * t * t * t }}
 		out:fly={{ x: 10, duration: 300, easing: (t) => t * t * t * t }}
-		class="btn variant-ghost-primary fixed bottom-6 right-0 z-50 cursor-pointer rounded-l-full p-2 w-14"
+		class="btn variant-glass-primary fixed bottom-6 right-0 z-50 cursor-pointer rounded-l-full p-2 w-14 text-primary-800 shadow-xl"
 		on:click={() => {
 			main?.scrollTo(0, 0);
 		}}
@@ -90,7 +90,7 @@
 			<path
 				stroke-linecap="round"
 				stroke-linejoin="round"
-				stroke-width="2"
+				stroke-width="4"
 				d="M5 10l7-7m0 0l7 7m-7-7v18"
 			/>
 		</svg>
