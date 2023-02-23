@@ -51,7 +51,7 @@
 							<img
 								class="absolute bottom-0 z-10 h-72 overflow-hidden rounded-b-full object-cover drop-shadow-2xl"
 								src={profile.image}
-								alt=""
+								alt="{profile.name} profile image"
 							/>
 							<div
 								class="absolute z-0 mx-auto aspect-square h-full rounded-full bg-surface-800 shadow-2xl dark:bg-primary-500 md:aspect-square lg:inset-0 lg:h-auto lg:w-full"

@@ -1,9 +1,5 @@
 <script lang="ts">
-	import {
-		modalStore,
-		type ModalComponent,
-		type ModalSettings
-	} from '@skeletonlabs/skeleton';
+	import { modalStore, type ModalComponent, type ModalSettings } from '@skeletonlabs/skeleton';
 	import VideoPlayer from '$lib/modals/VideoPlayer.svelte';
 	import { Layout } from '$lib/stores/LayoutStore';
 
@@ -22,14 +18,14 @@
 		};
 		modalStore.trigger(d);
 	}
-
 </script>
 
 <div style="transform: translateY({$Layout.scrollPosition / 2.8}px)">
 	<div
-		class="group relative mx-auto w-full overflow-hidden rounded-lg hover:scale-[1.03] md:transition-all duration-200 lg:max-w-md"
+		class="group relative mx-auto w-full overflow-hidden rounded-lg duration-200 hover:scale-[1.03] md:transition-all lg:max-w-md"
 	>
 		<button
+			name="Watch our video to learn more"
 			on:click={modalComponentEmbed}
 			type="button"
 			class="relative z-20 block w-full overflow-hidden rounded-lg border-2 border-primary-500 bg-primary-500/5 transition-all duration-500 hover:bg-transparent focus:outline-none group-hover:border-tertiary-500 dark:bg-surface-500/25 dark:hover:bg-transparent"
@@ -59,7 +55,11 @@
 					/>
 				</svg>
 			</span>
-			<img class="aspect-video w-full mix-blend-multiply" src="thumbnail.jpeg" alt="" />
+			<img
+				class="aspect-video w-full mix-blend-multiply"
+				src="thumbnail.jpeg"
+				alt="video thumbnail"
+			/>
 		</button>
 	</div>
 </div>

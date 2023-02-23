@@ -22,6 +22,7 @@
 	import { page } from '$app/stores';
 	import { lang } from '$lib/stores/LayoutStore';
 	import PageTransition from '$lib/animations/PageTransition.svelte';
+	import SeoData from '$lib/SEO/SeoData.svelte';
 
 	let main: HTMLElement | null;
 
@@ -50,7 +51,6 @@
 	}
 
 	let maxScroll: number;
-	$: console.log('maxScroll', $Layout.scrollPosition);
 
 	onMount(() => {
 		// get max scroll height of the page
@@ -64,18 +64,17 @@
 
 <svelte:window bind:innerWidth={deviceWidth} />
 
-<svelte:head>
-	<title>Home Inspeactions | R & A Home Inspections</title>
-</svelte:head>
+<SeoData />
 <SideBar />
 <!-- App Shell -->
 
 <!-- simple arrow to scroll to the top when the user passes halve the scroll -->
 {#if $Layout.scrollPosition > 2300 && $drawerStore.open === false}
 	<button
+		name="scroll-to-top"
 		in:fly={{ x: 10, duration: 300, easing: (t) => t * t * t * t }}
 		out:fly={{ x: 10, duration: 300, easing: (t) => t * t * t * t }}
-		class="btn variant-glass-primary fixed bottom-6 right-0 z-50 cursor-pointer rounded-l-full p-2 w-14 text-primary-800 shadow-xl"
+		class="btn variant-glass-primary fixed bottom-6 right-0 z-50 w-14 cursor-pointer rounded-l-full p-2 text-primary-800 shadow-xl"
 		on:click={() => {
 			main?.scrollTo(0, 0);
 		}}

@@ -33,7 +33,7 @@
 <!-- @component This example creates an embedded video modal. -->
 
 <div class="relative shadow-xl z-50">
-	<button class='absolute -top-3 -right-3 z-50 btn-icon variant-filled' on:click={parent.onClose}>✕</button>
+	<button class='absolute -top-3 -right-3 z-50 btn-icon variant-filled' on:click={parent.onClose} name="close">✕</button>
 	<iframe
 		class='bg-black w-full aspect-video rounded-container-token overflow-hidden'
 		src="https://www.youtube.com/embed/cgIL4Rp3Hks"

@@ -39,7 +39,7 @@
 			<img
 				class="aspect-square object-cover mix-blend-screen shadow-2xl rounded-token "
 				src="https://source.unsplash.com/random/?house"
-				alt="Home Inspection"
+				alt="House that can be inspected by a R & A Home Inspections"
 			/>
 		</div>
 		<div class="relative w-full md:px-10 lg:px-0">
@@ -72,7 +72,9 @@
 					<h4 class="!text-2xl font-black">Have more questions?</h4>
 					<!-- svelte-ignore missing-declaration -->
 					<button
+						name="open chat"
 						on:click={() => {
+							// @ts-ignore - no types for tidio
 							tidioChatApi.open();
 						}}
 						class="btn variant-ghost-primary"

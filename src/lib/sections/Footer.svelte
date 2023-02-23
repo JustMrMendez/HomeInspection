@@ -6,7 +6,7 @@
 	<div class="mx-auto max-w-7xl overflow-hidden py-20 px-6 sm:py-24 lg:px-8">
 		<LogoFull styles="w-44 mx-auto mb-10" />
 		<nav class="" aria-label="Footer">
-			<ul class="list-nav flex justify-center w-full">
+			<ul class="list-nav flex w-full justify-center">
 				<li><a href="/">Home</a></li>
 				<li><a href="/Services">Services</a></li>
 				<li><a href="/About">About us</a></li>
@@ -30,12 +30,7 @@
 				</svg>
 			</a>
 
-			<a
-				target="_blank"
-				rel="noreferrer"
-				href="https://instagram.com/rna_inspections"
-				class="text-gray-400 hover:text-gray-500"
-			>
+			<a target="_blank" rel="noreferrer" href="https://instagram.com/rna_inspections">
 				<span class="sr-only">Instagram</span>
 				<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 					<path

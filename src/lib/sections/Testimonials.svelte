@@ -67,6 +67,7 @@
 		>
 			{#each testimonials as testimonial, i}
 				<button
+					name="{testimonial.name} testimonial card from {testimonial.city} "
 					id={i.toString()}
 					on:click={() => {
 						active = i;

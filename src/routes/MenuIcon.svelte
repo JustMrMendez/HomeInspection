@@ -6,6 +6,8 @@
 </script>
 
 <button
+	aria-label="Menu"
+	name="open menu"
 	on:click={() => (open = !open)}
 	class={classNames(
 		'flex h-10 w-10 flex-col justify-between  rounded-full transition-all duration-300 lg:hover:shadow-md',
