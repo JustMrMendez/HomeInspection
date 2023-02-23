@@ -2,7 +2,7 @@
 	import { SEO } from './SEO';
 
 	export let metaDescription: string = SEO.description;
-	export let title: string = SEO.title;
+	export let title: string;
 
 	const pageTitle = `${title} | ${SEO.title}`;
 </script>
@@ -26,4 +26,8 @@
 	<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 	<!-- SEO.keywords -->
 	<meta name="keywords" content={SEO.keywords} />
+	<meta
+		name="robots"
+		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+	/>
 </svelte:head>

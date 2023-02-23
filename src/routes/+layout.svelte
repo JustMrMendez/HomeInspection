@@ -5,15 +5,7 @@
 	import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
-	import {
-		AppShell,
-		AppBar,
-		LightSwitch,
-		Drawer,
-		drawerStore,
-		SlideToggle,
-		ProgressRadial
-	} from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, LightSwitch, drawerStore } from '@skeletonlabs/skeleton';
 	import MenuIcon from './MenuIcon.svelte';
 	import Logo from '$lib/Logo.svelte';
 	import LogoFull from '$lib/LogoFull.svelte';
@@ -60,11 +52,16 @@
 	$: page.subscribe(() => {
 		main?.scrollTo(0, 0);
 	});
+
+	let pageTitle: string;
+	$: pageTitle = $page.url.pathname === '/' ? 'Home' : $page.url.pathname.replace('/', '');
 </script>
 
 <svelte:window bind:innerWidth={deviceWidth} />
 
-<SeoData />
+{#key $page.url.pathname}
+	<SeoData title={pageTitle} />
+{/key}
 <SideBar />
 <!-- App Shell -->
 
