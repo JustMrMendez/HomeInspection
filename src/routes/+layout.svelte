@@ -149,14 +149,14 @@
 				<!-- call now primary button -->
 				<a
 					class="btn btn-sm variant-filled-primary hidden md:block"
-					href="tel:3053302949"
+					href="tel:+1-305-330-2949"
 					rel="noreferrer"
 				>
 					Contact us
 				</a>
 				<a
 					class="btn btn-sm variant-filled-primary md:hidden"
-					href="tel:+1-800-555-5555"
+					href="tel:+1-305-330-2949"
 					rel="noreferrer"
 				>
 					Call Now
