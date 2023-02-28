@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { PageData } from '../../routes/$types';
 	import Testimonial from '$lib/Testimonial.svelte';
 	import { onMount } from 'svelte';
 
