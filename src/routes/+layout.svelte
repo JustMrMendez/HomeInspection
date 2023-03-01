@@ -74,7 +74,7 @@
 		name="scroll-to-top"
 		in:fly={{ x: 10, duration: 300, easing: (t) => t * t * t * t }}
 		out:fly={{ x: 10, duration: 300, easing: (t) => t * t * t * t }}
-		class="btn variant-glass-primary fixed bottom-6 right-0 z-50 w-14 cursor-pointer rounded-l-full p-2 text-primary-800 shadow-xl"
+		class="btn variant-glass text-surface-800/80 dark:text-surface-500/80 fixed bottom-6 right-0 z-50 w-14 cursor-pointer rounded-l-full p-2 shadow-xl"
 		on:click={() => {
 			main?.scrollTo(0, 0);
 		}}

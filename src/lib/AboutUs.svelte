@@ -1,8 +1,4 @@
 <script lang="ts">
-	import { Layout } from '$lib/stores/LayoutStore';
-
-	//export let title: string="This is a test title";
-
 	export let flip: boolean = true;
 	type profile = {
 		name: string;

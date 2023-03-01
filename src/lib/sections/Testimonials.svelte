@@ -65,27 +65,31 @@
 			class="mt-10 flex min-h-fit -translate-x-2 snap-x snap-mandatory justify-between gap-5 overflow-x-auto overflow-y-visible px-10 py-20 shadow-inner md:flex-wrap md:shadow-none lg:flex-nowrap lg:overflow-visible "
 		>
 			{#each testimonials as testimonial, i}
-				<button
-					name="{testimonial.name} testimonial card from {testimonial.city} "
-					id={i.toString()}
-					on:click={() => {
-						active = i;
-						const element = document.getElementById(i.toString());
-						if (element) {
-							element.scrollIntoView({
-								behavior: 'smooth',
-								block: 'center'
-							});
-						}
-					}}
-					class="min-w-full flex-grow snap-center transition-all duration-500 md:w-2/5 md:min-w-min md:cursor-default md:hover:z-10
-					{active === i ? 'shadow-lg' : ''}"
+				<li
+					class="min-w-full unestyled flex-grow snap-center transition-all duration-500 md:w-2/5 md:min-w-min md:cursor-default md:hover:z-10
+						{active === i ? 'shadow-lg' : ''}"
 					style={`transform: translateX(calc(${getTranslate()}px*${
 						i + Math.random() * 1
 					})) rotate(calc(${i % 2 !== 0 ? '-1' : '1'}*${i - Math.random() * 15}deg));`}
 				>
-					<Testimonial {testimonial} />
-				</button>
+					<button
+						class="w-full h-full"
+						name="{testimonial.name} testimonial card from {testimonial.city} "
+						id={i.toString()}
+						on:click={() => {
+							active = i;
+							const element = document.getElementById(i.toString());
+							if (element) {
+								element.scrollIntoView({
+									behavior: 'smooth',
+									block: 'center'
+								});
+							}
+						}}
+					>
+						<Testimonial {testimonial} />
+					</button>
+				</li>
 			{/each}
 		</ul>
 	</div>
