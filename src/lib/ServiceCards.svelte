@@ -96,6 +96,7 @@
 					>Read More <span aria-hidden="true"> &rarr;</span></a
 				> -->
 				<a
+					aria-label="Call us"
 					href="tel:7868867436"
 					class="absolute right-3 bottom-2 rounded-full  p-2 transition-all duration-500 hover:scale-105 dark:hover:fill-secondary-500 md:hover:bg-success-500  md:hover:!text-secondary-500 lg:rotate-[135deg] lg:group-hover:rotate-0
 					{focusService == i

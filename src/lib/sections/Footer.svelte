@@ -15,6 +15,7 @@
 		</nav>
 		<div class="mt-10 flex justify-center space-x-10">
 			<a
+				aria-label="Facebook"
 				target="_blank"
 				rel="noreferrer"
 				href="https://www.facebook.com/RnAinspection"
@@ -30,7 +31,12 @@
 				</svg>
 			</a>
 
-			<a target="_blank" rel="noreferrer" href="https://instagram.com/rna_inspections">
+			<a
+				target="_blank"
+				rel="noreferrer"
+				href="https://instagram.com/rna_inspections"
+				aria-label="Instagram"
+			>
 				<span class="sr-only">Instagram</span>
 				<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 					<path

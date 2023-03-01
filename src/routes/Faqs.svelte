@@ -70,17 +70,14 @@
 					class="mt-10 flex flex-col items-center justify-between gap-10 py-5 shadow-inner md:flex-row md:px-5"
 				>
 					<h4 class="!text-2xl font-black">Have more questions?</h4>
-					<!-- svelte-ignore missing-declaration -->
-					<button
-						name="open chat"
-						on:click={() => {
-							// @ts-ignore - no types for tidio
-							tidioChatApi.open();
-						}}
+					<a
+						href="sms:1-305-330-2949?body=Hello%20R%20%26%20A%20Home%20Inspections!, I have a question about your services.
+					"
+					
 						class="btn variant-ghost-primary"
 					>
 						Chat with us live
-					</button>
+					</a>
 				</div>
 			</div>
 		</div>
