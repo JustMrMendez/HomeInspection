@@ -1,10 +1,10 @@
 <script lang="ts">
-	import SideBar from './SideBar.svelte';
-	import Footer from '../lib/sections/Footer.svelte';
-	import { fly } from 'svelte/transition';
 	import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
+	import SideBar from './SideBar.svelte';
+	import Footer from '../lib/sections/Footer.svelte';
+	import { fly } from 'svelte/transition';
 	import { AppShell, AppBar, LightSwitch, drawerStore } from '@skeletonlabs/skeleton';
 	import MenuIcon from './MenuIcon.svelte';
 	import Logo from '$lib/Logo.svelte';
@@ -12,9 +12,12 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { Layout } from '$lib/stores/LayoutStore';
 	import { page } from '$app/stores';
-	import { lang } from '$lib/stores/LayoutStore';
 	import PageTransition from '$lib/animations/PageTransition.svelte';
 	import SeoData from '$lib/SEO/SeoData.svelte';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+
+	inject({ mode: dev ? 'development' : 'production' });
 
 	let main: HTMLElement | null;
 
