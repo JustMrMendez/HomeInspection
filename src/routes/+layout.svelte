@@ -17,7 +17,7 @@
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
 
-	inject({ mode: dev ? 'development' : 'production' });
+	inject({ mode: dev ? 'development' : 'production', debug: false });
 
 	let main: HTMLElement | null;
 
@@ -146,7 +146,7 @@
 			<!-- </svelte:fragment> -->
 			<svelte:fragment slot="trail">
 				<div class="hidden lg:block">
-					<LightSwitch />
+					<LightSwitch height="h-6" />
 				</div>
 
 				<!-- call now primary button -->
