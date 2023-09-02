@@ -33,14 +33,14 @@
 
 <!-- @component This example creates an embedded video modal. -->
 
-<div class="relative z-50 shadow-xl">
+<div class="relative z-50 shadow-xl w-2/3 h-auto">
 	<button
 		class="btn-icon variant-filled absolute -top-3 -right-3 z-50"
 		on:click={parent.onClose}
 		name="close">✕</button
 	>
 	<iframe
-		class="aspect-video w-full overflow-hidden bg-black rounded-container-token"
+		class="aspect-video w-full h-full overflow-hidden bg-black rounded-container-token"
 		src="https://www.youtube.com/embed/cgIL4Rp3Hks"
 		title="YouTube video player"
 		frameborder="0"
