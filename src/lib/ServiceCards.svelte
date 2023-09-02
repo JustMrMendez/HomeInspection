@@ -7,21 +7,21 @@
 			title: 'Insurance Inspection',
 			description:
 				"Get thorough insurance inspections from our experts. We'll assess your property for hazards, safety issues, and compliance with codes, and provide same-day reports for your peace of mind. Trust us to secure the best coverage for your property.",
-			link: '/Services/4-point-inspection'
+			link: '/Services/insurance-inspection'
 		},
 		{
 			icon: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25',
 			title: 'Full Home Inspection',
 			description:
 				'Choose our expert team for a comprehensive home inspection. We`ll evaluate compliance with building codes, identify issues, and provide a detailed same-day report. Trust us for peace of mind in making decisions about your property.',
-			link: '/services/wind-mitigation'
+			link: '/Services/full-home-inspection'
 		},
 		{
 			icon: 'M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z',
 			title: 'Sewer Scope',
 			description:
 				'Let R & A inspect your sewer pipes with our state-of-the-art drain inspection camera. Our expert technicians will quickly identify any issues, providing you with detailed video footage and recommendations for repair. Trust us to keep your pipes running smoothly',
-			link: '/services/roof-certification'
+			link: '/Services/sewer-scope'
 		}
 	];
 
@@ -92,9 +92,9 @@
 				</p>
 			</div>
 			<footer class="card-footer relative flex justify-between">
-				<!-- <a href={service.link} class="text-base font-medium text-indigo-700 hover:text-indigo-600"
+				<a href={service.link} class="text-base font-medium text-indigo-700 hover:text-indigo-600"
 					>Read More <span aria-hidden="true"> &rarr;</span></a
-				> -->
+				>
 				<a
 					aria-label="Call us"
 					href="tel:7868867436"

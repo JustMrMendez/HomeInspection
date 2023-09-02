@@ -33,7 +33,7 @@
 
 <!-- @component This example creates an embedded video modal. -->
 
-<div class="relative z-50 shadow-xl w-2/3 h-auto">
+<div class="relative z-50 shadow-xl w-full md:w-2/3 h-auto">
 	<button
 		class="btn-icon variant-filled absolute -top-3 -right-3 z-50"
 		on:click={parent.onClose}
@@ -42,7 +42,7 @@
 	<iframe
 		class="aspect-video w-full h-full overflow-hidden bg-black rounded-container-token"
 		src="https://www.youtube.com/embed/cgIL4Rp3Hks"
-		title="YouTube video player"
+		title="R & A Home Inspection Video Presentation"
 		frameborder="0"
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 		allowfullscreen

@@ -1,11 +1,11 @@
 <script lang="ts">
 	export let hero: {
-		title: string;
-		titleAccent: string;
-		subtitle: string;
+		title?: string;
+		titleAccent?: string;
+		subtitle?: string;
 	} = {
 		title: 'Ensure the safety and integrity',
-		titleAccent: 'of your new home',
+		titleAccent: 'of your properties',
 		subtitle:
 			'R&A Home Inspection offers professional inspections for buyers, sellers and real estate professionals. Trust us to ensure the safety and integrity of your new home.'
 	};
@@ -78,7 +78,7 @@
 			<div class="text-center">
 				<h1 class="text-gray-surface-500/50:text-5xl text-4xl font-bold tracking-tight md:text-6xl">
 					<span class="block">{hero.title}</span>
-					<span class="block text-primary-600">{hero.titleAccent}</span>
+					<a href="tel:3053302949" class="block text-primary-600 unstyled">{hero.titleAccent}</a>
 				</h1>
 				<p
 					class="text-gray-surface-500/50:text-lg mx-auto mt-3 max-w-md text-base md:mt-5 md:max-w-3xl md:text-xl"
