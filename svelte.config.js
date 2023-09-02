@@ -4,6 +4,11 @@ import preprocess from 'svelte-preprocess';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
+		prerender: {
+			handleHttpError: () => {
+				return
+			}
+		},
 		adapter: adapter({
 			runtime: 'edge',
 			regions: ['cle1'],
