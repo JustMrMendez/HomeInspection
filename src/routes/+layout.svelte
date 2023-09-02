@@ -14,10 +14,6 @@
 	import { page } from '$app/stores';
 	import PageTransition from '$lib/animations/PageTransition.svelte';
 	import SeoData from '$lib/SEO/SeoData.svelte';
-	import { dev } from '$app/environment';
-	import { inject } from '@vercel/analytics';
-
-	inject({ mode: dev ? 'development' : 'production', debug: false });
 
 	let main: HTMLElement | null;
 
